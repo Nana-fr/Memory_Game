@@ -23,64 +23,102 @@
   <header class="text-center">
     <h1>Memory game</h1>
   </header>
+
   <main>
-    <div class="d-flex flex-wrap justify-content-around">
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="bleu" src="img/bleu.jpg" alt="bleu">
-      </figure>
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="rouge" src="img/rouge.jpg" alt="rouge">
-      </figure>
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="jaune" src="img/jaune.jpg" alt="jaune">
-      </figure>
+
+    <div class="d-flex justify-content-center">
+      <button id="launchGame">Launch Game</button>
     </div>
-    <div class="d-flex flex-wrap justify-content-around">
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="rouge" src="img/rouge.jpg" alt="rouge">
-      </figure>
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="noir" src="img/noir.jpg" alt="noir">
-      </figure>
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="vert" src="img/vert.jpg" alt="vert">
-      </figure>
-    </div>
-    <div class="d-flex flex-wrap justify-content-around">
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="bleu" src="img/bleu.jpg" alt="bleu">
-      </figure>
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="orange" src="img/orange.jpg" alt="orange">
-      </figure>
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="jaune" src="img/jaune.jpg" alt="jaune">
-      </figure>
-    </div>
-    <div class="d-flex flex-wrap justify-content-around">
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="noir" src="img/noir.jpg" alt="noir">
-      </figure>
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="vert" src="img/vert.jpg" alt="vert">
-      </figure>
-      <figure>
-        <div class="hidden-face position-absolute z-index-2"></div>
-        <img class="img-fluid" name="orange" src="img/orange.jpg" alt="orange">
-      </figure>
+    
+    <div id="game" class="d-none">
+
+        <div class="d-flex flex-wrap justify-content-around pb-3">
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="bleu" src="img/bleu.jpg" alt="bleu">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="rouge" src="img/rouge.jpg" alt="rouge">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="jaune" src="img/jaune.jpg" alt="jaune">
+                </figure> 
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around pb-3">
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="rouge" src="img/rouge.jpg" alt="rouge">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="noir" src="img/noir.jpg" alt="noir">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="vert" src="img/vert.jpg" alt="vert">
+                </figure>
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around pb-3">
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="bleu" src="img/bleu.jpg" alt="bleu">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="orange" src="img/orange.jpg" alt="orange">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="jaune" src="img/jaune.jpg" alt="jaune">
+                </figure>
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around pb-3">
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="noir" src="img/noir.jpg" alt="noir">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="vert" src="img/vert.jpg" alt="vert">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="orange" src="img/orange.jpg" alt="orange">
+                </figure>
+            </div>
+        </div>
+
     </div>
   </main>
+
   <!-- Add your site or application content here -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
