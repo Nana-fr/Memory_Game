@@ -1,21 +1,17 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="EN">
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Memory Game</title>
+  <meta name="description" content="Memory game">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
-
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
@@ -24,8 +20,108 @@
 
 <body>
 
+  <header class="text-center">
+    <h1>Memory game</h1>
+  </header>
+
+  <main>
+
+    <div class="d-flex justify-content-center">
+      <button id="launchGame">Launch Game</button>
+    </div>
+    
+    <div id="game" class="d-none">
+
+        <div class="d-flex flex-wrap justify-content-around pb-3">
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="bleu" src="img/bleu.jpg" alt="bleu">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="rouge" src="img/rouge.jpg" alt="rouge">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="jaune" src="img/jaune.jpg" alt="jaune">
+                </figure> 
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around pb-3">
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="rouge" src="img/rouge.jpg" alt="rouge">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="noir" src="img/noir.jpg" alt="noir">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="vert" src="img/vert.jpg" alt="vert">
+                </figure>
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around pb-3">
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="bleu" src="img/bleu.jpg" alt="bleu">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="orange" src="img/orange.jpg" alt="orange">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="jaune" src="img/jaune.jpg" alt="jaune">
+                </figure>
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around pb-3">
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="noir" src="img/noir.jpg" alt="noir">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="vert" src="img/vert.jpg" alt="vert">
+                </figure>
+            </div>
+            <div class="card">
+                <figure class="innerCard">
+                    <div class="cardFace cardStillHidden back"></div>
+                    <img class="cardFace front" name="orange" src="img/orange.jpg" alt="orange">
+                </figure>
+            </div>
+        </div>
+
+    </div>
+  </main>
+
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
