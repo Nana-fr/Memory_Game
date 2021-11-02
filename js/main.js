@@ -10,32 +10,35 @@ let secondCard = "";
 function chooseFirstCard() {
     for (let card of cards) {
         card.onclick = function(){
-        this.classList.remove("hidden-face");   
-        firstCard = this;
-        chooseSecondCard(firstCard);
+        this.classList.remove("hidden-face");
+        let hiddenFirstCard = this;
+        firstCard = this.nextElementSibling.name;
+        chooseSecondCard(firstCard, hiddenFirstCard);
         }
     }
 }
 
-function chooseSecondCard(firstCard) {
+function chooseSecondCard(firstCard, hiddenFirstCard) {
     for (let card of cards) {
         card.onclick = function(){
         this.classList.remove("hidden-face");
-        secondCard = this;
-        checkCard(firstCard, secondCard);
+        let hiddenSecondCard = this;
+        secondCard = this.nextElementSibling.name;
+        document.body.classList.add("disabledClick");
+        setTimeout(checkCard, 500, firstCard, hiddenFirstCard, secondCard, hiddenSecondCard);
         }
     }
 }
 
-function checkCard(firstCard, secondCard) {
-    if (firstCard.id !== secondCard.id) {
-        console.log(firstCard.id + "false" + secondCard.id);
-        firstCard.classList.add("hidden-face");
-        secondCard.classList.add("hidden-face");
+function checkCard(firstCard, hiddenFirstCard, secondCard, hiddenSecondCard) {
+    if (firstCard !== secondCard) {
+        console.log(firstCard + "false" + secondCard);
+        hiddenFirstCard.classList.add("hidden-face");
+        hiddenSecondCard.classList.add("hidden-face");
         firstCard = "";
         secondCard = ""; 
     } else {
-        console.log(firstCard.id + "true" + secondCard.id)
+        console.log(firstCard + "true" + secondCard)
         firstCard = "";
         secondCard = "";
     }
@@ -44,6 +47,7 @@ function checkCard(firstCard, secondCard) {
 
 function endGame() {
      if (document.querySelector(".hidden-face")) {
+        document.body.classList.remove("disabledClick");
         chooseFirstCard(); 
     } else {
        alert("you win");

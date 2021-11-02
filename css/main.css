@@ -96,7 +96,9 @@ textarea {
     width: 90px;
     height: 90px;
   }
-
+  .disabledClick {
+    pointer-events: none;
+  }
 
 
 /* ==========================================================================
