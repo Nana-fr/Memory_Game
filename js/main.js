@@ -5,9 +5,106 @@ let game = document.getElementById("game");
 let cards = document.getElementsByClassName("cardStillHidden");
 let firstCardFace = "";
 let secondCardFace = "";
+let colors = [
+    { 
+        name : "orange",
+        src : "img/orange.jpg",
+        alt : "orange",
+    },
+    {
+        name : "vert",
+        src : "img/vert.jpg",
+        alt : "vert"
+    },
+    {
+        name : "noir",
+        src : "img/noir.jpg",
+        alt : "noir"
+    },
+    {
+        name : "jaune", 
+        src : "img/jaune.jpg",
+        alt : "jaune"
+    },
+    {
+        name : "bleu",
+        src : "img/bleu.jpg",
+        alt : "bleu"
+    },
+    {
+        name : "rouge",
+        src : "img/rouge.jpg",
+        alt : "rouge"
+    },
+    { 
+        name : "orange",
+        src : "img/orange.jpg",
+        alt : "orange",
+    },
+    {
+        name : "vert",
+        src : "img/vert.jpg",
+        alt : "vert"
+    },
+    {
+        name : "noir",
+        src : "img/noir.jpg",
+        alt : "noir"
+    },
+    {
+        name : "jaune", 
+        src : "img/jaune.jpg",
+        alt : "jaune"
+    },
+    {
+        name : "bleu",
+        src : "img/bleu.jpg",
+        alt : "bleu"
+    },
+    {
+        name : "rouge",
+        src : "img/rouge.jpg",
+        alt : "rouge"
+    }
+];
+
+function putColors() {
+    let images = document.querySelectorAll("img");
+    let i = Math.floor(Math.random() * colors.length);
+    images.forEach(function(image) {
+        console.log(i);
+        let color = colors[i]
+        console.log(color)
+        image.name = color["name"];
+        image.src = color["src"];
+        image.alt = color["alt"];
+        colors.splice(i, 1);
+        i = Math.floor(Math.random() * colors.length);
+        console.log(colors)
+    })
+    chooseFirstCard()
+}
+
 
 
 // FUNCTIONS
+
+function putColors() {
+    let images = document.querySelectorAll("img");
+    let i = Math.floor(Math.random() * colors.length);
+    images.forEach(function(image) {
+        console.log(i);
+        let color = colors[i]
+        console.log(color)
+        image.name = color["name"];
+        image.src = color["src"];
+        image.alt = color["alt"];
+        colors.splice(i, 1);
+        i = Math.floor(Math.random() * colors.length);
+        console.log(colors)
+    })
+    chooseFirstCard()
+}
 
 function chooseFirstCard() {
     for (let card of cards) {
@@ -73,4 +170,4 @@ launchGame.onclick = function() {
     game.classList.remove("d-none");
 }
 
-chooseFirstCard();
+putColors();

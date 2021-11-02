@@ -95,7 +95,7 @@ textarea {
       border: none;
       width: 90px;
       height: 90px;
-      perspective: 400px;
+      perspective: 10px;
   }
   .innerCard {
       width: 100%;
@@ -108,6 +108,7 @@ textarea {
   }
   .cardFace {
       position: absolute;
+      border-radius: 50%;
       height: 100%;
       width: 100%;
       backface-visibility: hidden;
@@ -116,12 +117,20 @@ textarea {
       background-color: gray;
   }
   .front {
-      transform: rotateY( 180deg );
+      transform: rotateY(180deg);
   }
   .flip {
-      transform: translateX(-100%) rotateY(-180deg);
+      transform: translateX(-100%) rotateY(180deg);
   }
 
+  @media (min-width: 576px) {
+      .card {
+        border: none;
+        width: 130px;
+        height: 130px;
+        perspective: 600px;
+    }
+  }
 
 /* ==========================================================================
    Helper classes
