@@ -20,15 +20,28 @@
 
 <body>
 
-  <header class="text-center">
-    <h1>Memory game</h1>
-    <p id="counter" class="d-none">Number of moves:<span id="nbMoves" class="ms-2"></span></p>
+  <header class="text-center pb-3 bg-success">
+    <h1 class="p-3">Memory game</h1>
+    <p id="counter" class="d-none">Number of moves:<span id="nbMoves" class="ms-2"></span><span id="maxMoves"></span></p>
   </header>
 
   <main>
 
-    <div class="d-flex justify-content-center">
-      <button id="launchGame">Launch Game</button>
+    <div id="startContainer" class="d-flex flex-column align-items-center p-5">
+      <button id="launchGame" class="btn my-3">Launch Game</button>
+      <button id="rules" class="btn my-3">Rules</button>
+    </div>
+
+    <div id="theme" class="d-none d-flex flex-column align-items-center p-5">
+        <button id="chinese" class="btn my-3">Chinese</button>
+        <button id="architecture" class="btn my-3">Architecture</button>
+        <button id="colors" class="btn my-3">Colors</button>
+    </div>
+
+    <div id="level" class="d-none d-flex flex-column align-items-center p-5">
+        <button id="easy" class="btn my-3" onclick="setLevel(this.id)">Easy</button>
+        <button id="medium" class="btn my-3" onclick="setLevel(this.id)">Medium</button>
+        <button id="difficult" class="btn my-3" onclick="setLevel(this.id)">Difficult</button>
     </div>
     
     <div id="game" class="d-none d-flex flex-wrap flex-column flex-lg-row justify-content-center">
