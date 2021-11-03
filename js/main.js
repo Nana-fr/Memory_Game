@@ -2,77 +2,46 @@
 
 let launchGame = document.getElementById("launchGame");
 let game = document.getElementById("game");
+let counter = document.getElementById("counter");
+let nbMoves = document.getElementById("nbMoves");
 let cards = document.getElementsByClassName("cardStillHidden");
 let firstCardFace = "";
 let secondCardFace = "";
-let colors = [
-    { 
-        name : "orange",
-        src : "img/orange.jpg",
-        alt : "orange",
-    },
-    {
-        name : "vert",
-        src : "img/vert.jpg",
-        alt : "vert"
-    },
-    {
-        name : "noir",
-        src : "img/noir.jpg",
-        alt : "noir"
-    },
-    {
-        name : "jaune", 
-        src : "img/jaune.jpg",
-        alt : "jaune"
-    },
-    {
-        name : "bleu",
-        src : "img/bleu.jpg",
-        alt : "bleu"
-    },
-    {
-        name : "rouge",
-        src : "img/rouge.jpg",
-        alt : "rouge"
-    },
-    { 
-        name : "orange",
-        src : "img/orange.jpg",
-        alt : "orange",
-    },
-    {
-        name : "vert",
-        src : "img/vert.jpg",
-        alt : "vert"
-    },
-    {
-        name : "noir",
-        src : "img/noir.jpg",
-        alt : "noir"
-    },
-    {
-        name : "jaune", 
-        src : "img/jaune.jpg",
-        alt : "jaune"
-    },
-    {
-        name : "bleu",
-        src : "img/bleu.jpg",
-        alt : "bleu"
-    },
-    {
-        name : "rouge",
-        src : "img/rouge.jpg",
-        alt : "rouge"
-    }
-];
-
+let colors = [];
 
 
 // FUNCTIONS
 
-function mixCards(colors) {
+function getCards() {
+    fetch('data/images.json')
+    .then(function(response) {
+        if(response.ok) {
+            response.json().then(function(response){
+                let tempArr = [];
+                for (let pairs in response) {
+                    tempArr.push(pairs)
+                } 
+                selectCards(tempArr);
+                tempArr.splice(6,tempArr.length-6);
+                for (let tempArrPairs of tempArr) {
+                    for (let cards in response[tempArrPairs]) {
+                    colors.push(response[tempArrPairs][cards]);       
+                    }    
+                }
+            shuffleCards(colors);
+            })
+        }
+    });
+}
+
+function selectCards(tempArr) {
+    for(let i =tempArr.length-1 ; i>0 ;i--){
+        let j = Math.floor( Math.random() * (i + 1) );
+        [tempArr[i],tempArr[j]]=[tempArr[j],tempArr[i]];
+    }
+}
+
+function shuffleCards(colors) {
     for(let i =colors.length-1 ; i>0 ;i--){
         let j = Math.floor( Math.random() * (i + 1) );
         [colors[i],colors[j]]=[colors[j],colors[i]];
@@ -130,6 +99,7 @@ function checkCard(firstCardFace, firstCard, secondCardFace, secondCard) {
         firstCardFace = "";
         secondCardFace = "";
     }
+    nbMoves.innerText++;
     endGame();
 }
 
@@ -138,7 +108,7 @@ function endGame() {
         document.body.classList.remove("disabledClick");
         chooseFirstCard(); 
     } else {
-       alert("you win");
+       alert(`you win in ${nbMoves.innerText} moves.`);
         launchGame.classList.remove("d-none");
         game.classList.add("d-none");
         let backCards = document.querySelectorAll(".back");
@@ -146,6 +116,8 @@ function endGame() {
             backCard.classList.add("cardStillHidden");
             backCard.parentElement.classList.remove("flip")
         });
+        counter.classList.add("d-none");
+        colors = [];
         document.body.classList.remove("disabledClick");
     }
 }
@@ -155,6 +127,8 @@ function endGame() {
 launchGame.onclick = function() {
     launchGame.classList.add("d-none");
     game.classList.remove("d-none");
-    mixCards(colors);
+    counter.classList.remove("d-none");
+    nbMoves.innerText = 0;
+    getCards();
 }
 
