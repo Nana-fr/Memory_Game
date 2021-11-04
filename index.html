@@ -20,118 +20,158 @@
 
 <body>
 
-  <header class="text-center pb-3 bg-success">
+    <div id="layer" class="d-none position-fixed">
+        <div class="messageInfo container-fluid position-absolute opacity-75 d-flex flex-column align-items-center p-3">
+          <p id="message" class="text-center"></p><br>
+          <button class="btn my-3" onclick="closeLayer()">OK</button>
+        </div>
+    </div>
+
+  <header class="text-center pb-3">
     <h1 class="p-3">Memory game</h1>
-    <p id="gameInfo" class="d-none"></p>
-    <p id="counter" class="d-none">Number of moves:<span id="nbMoves" class="ms-2"></span><span id="maxMoves"></span></p>
+    <div class="d-none dashboard d-flex text-white align-items-center justify-content-around">
+        <button class="btn" onclick="resetGame()">Quit game</button>
+        <div class="d-flex flex-column">
+            <p class="themeInfo">Theme: </p>
+            <p class="levelInfo"></p>
+            <p>Number of moves: <span class="nbMoves" class="ms-2"></span><span class="maxMoves"></span></p>
+        </div>
+    </div>
+  
   </header>
 
-  <main>
+  
 
-    <div id="startContainer" class="d-flex flex-column align-items-center p-5">
-      <button id="launchGame" class="btn my-3">Launch Game</button>
-      <button id="rules" class="btn my-3">Rules</button>
-    </div>
+  <main class="d-flex flex-row">
 
-    <div id="theme" class="d-none d-flex flex-column align-items-center p-5">
-        <button id="chinese" class="btn my-3">Chinese</button>
-        <button id="architecture" class="btn my-3">Architecture</button>
-        <button id="colors" class="btn my-3">Colors</button>
-    </div>
+        <aside class="d-none dashboard d-flex flex-column align-items-center justify-content-center text-white">
+            <button class="btn" onclick="resetGame()">Quit game</button>
+            <p class="themeInfo">Theme: </p>
+            <p class="levelInfo"></p>
+            <p>Number of moves: <span class="nbMoves ms-2"></span><span class="maxMoves"></span></p>
+        </aside>
 
-    <div id="level" class="d-none d-flex flex-column align-items-center p-5">
-        <button id="easy" class="btn my-3" onclick="setLevel(this.id)">Easy</button>
-        <button id="medium" class="btn my-3" onclick="setLevel(this.id)">Medium</button>
-        <button id="difficult" class="btn my-3" onclick="setLevel(this.id)">Difficult</button>
-    </div>
-    
-    <div id="game" class="d-none d-flex flex-wrap flex-column flex-lg-row justify-content-center">
+        <div class="board">
+            <div id="startContainer" class="d-flex flex-column align-items-center p-5">
+                <button id="launchGame" class="btn my-3">Launch Game</button>
+                <button id="rules" class="btn my-3" onclick="displayRules()">Rules</button>
+            </div>
 
-        <div class="d-flex flex-wrap flex-lg-column justify-content-center">
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
+            <div id="theme" class="d-none d-flex flex-column align-items-center p-5">
+                <button id="Chinese" class="btn my-3" onclick="setTheme(this.id)">Chinese</button>
+                <button id="Japanese" class="btn my-3" onclick="setTheme(this.id)">Japanese</button>
+                <button id="Colors" class="btn my-3" onclick="setTheme(this.id)">Colors</button>
             </div>
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
-            </div>
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure> 
-            </div>
-        </div>
 
-        <div class="d-flex flex-wrap flex-lg-column justify-content-center">
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
+            <div class="subtheme d-none d-flex flex-column align-items-center p-5">
+                <button id="HSK-1" value="data/HSK_1.json" class="btn my-3">HSK 1</button>
+                <button id="HSK-2" value="data/HSK_2.json" class="btn my-3">HSK 2</button>
+                <button id="HSK-3" value="data/HSK_3.json" class="btn my-3">HSK 3</button>
+                <button id="HSK-4" value="data/HSK_4.json" class="btn my-3">HSK 4</button>
+                <button id="HSK-5" value="data/HSK_5.json" class="btn my-3">HSK 5</button>
+                <button id="HSK-6" value="data/HSK_6.json" class="btn my-3">HSK 6</button>
             </div>
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
-            </div>
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
-            </div>
-        </div>
 
-        <div class="d-flex flex-wrap flex-lg-column justify-content-center">
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
+            <div class="subtheme d-none d-flex flex-column align-items-center p-5">
+                <button id="JLPT-N5" value="data/JLPT_N5.json" class="btn my-3">JLPT N5</button>
+                <button id="JLPT-N4" value="data/JLPT_N4.json" class="btn my-3">JLPT N4</button>
+                <button id="JLPT-N3" value="data/JLPT_N3.json" class="btn my-3">JLPT N3</button>
+                <button id="JLPT-N2" value="data/JLPT_N2.json" class="btn my-3">JLPT N2</button>
+                <button id="JLPT-N1" value="data/JLPT_N1.json" class="btn my-3">JLPT N1</button>
             </div>
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
-            </div>
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
-            </div>
-        </div>
 
-        <div class="d-flex flex-wrap flex-lg-column justify-content-center">
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
+            <div id="level" class="d-none d-flex flex-column align-items-center p-5">
+                <button id="Easy" class="btn my-3">Easy</button>
+                <button id="Medium" class="btn my-3">Medium</button>
+                <button id="Difficult" class="btn my-3">Difficult</button>
             </div>
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
-            </div>
-            <div class="card m-2 m-sm-4">
-                <figure class="innerCard">
-                    <div class="cardFace cardStillHidden back"></div>
-                    <img class="cardFace front">
-                </figure>
-            </div>
-        </div>
+                
+            <div id="game" class="d-none d-flex flex-wrap flex-column flex-lg-row justify-content-center">
+                <div class="d-flex flex-wrap flex-lg-column justify-content-center">
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure> 
+                    </div>
+                </div>
 
-    </div>
+                <div class="d-flex flex-wrap flex-lg-column justify-content-center">
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap flex-lg-column justify-content-center">
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap flex-lg-column justify-content-center">
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                    <div class="card m-2 m-sm-4">
+                        <figure class="innerCard">
+                            <div class="cardFace cardStillHidden back"></div>
+                            <img class="cardFace front">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div> 
   </main>
 
   <!-- Add your site or application content here -->

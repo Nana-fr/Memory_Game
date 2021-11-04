@@ -1,0 +1,98 @@
+{
+    "pair1" : {
+        "card1" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        }
+    },
+    "pair2" : {
+        "card1" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        }
+    },
+    "pair3" : {
+        "card1" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        }
+    },
+    "pair4" : {
+        "card1" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        }
+    },
+    "pair5" : {
+        "card1" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        }
+    },
+    "pair6" : {
+        "card1" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        }
+    },
+    "pair7" : {
+        "card1" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        }
+    },
+    "pair8" : {
+        "card1" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "",
+            "src" : "img/jlpt_n5/",
+            "alt" : ""
+        }
+    }
+}
