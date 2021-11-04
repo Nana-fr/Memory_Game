@@ -125,11 +125,13 @@ textarea {
       width: 100%;
       backface-visibility: hidden;
     }
-  .back {
-    background-color: gray;
-  }
+  /* .back {
+   
+  } */
   .cardStillHidden {
-     box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
+    box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
+    background-image: url("../img/backCard/backCard.jpg");
+    background-size: cover;
   }
   .front {
     box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
@@ -139,8 +141,11 @@ textarea {
   .card:hover .cardStillHidden{
     width: 27vw;
     height: 28vw;
+    border-left: 2px solid #41362a;
+    background-image: url("../img/backCard/backCardHover.jpg");
+    background-size: cover;
     box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.4), -6px 0.8vw 0.7vw -0.5vw rgba(0, 0, 0, 0.2), -12px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.4);
-    border-right: 1px solid rgb(36, 36, 36);
+    border-right: 1px solid #41362a;
   }
 
   .flip {
@@ -168,7 +173,10 @@ textarea {
   .card:hover .cardStillHidden{
     width: 17vw;
     height: 18vw;
+    border-left: 2px solid #41362a;
+    background-image: url("../img/backCard/backCardHover2.jpg");
     box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -18px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
+    border-right: 1px solid #41362a;
   }
 
   @media (min-width: 992px) {
@@ -179,7 +187,10 @@ textarea {
   .card:hover .cardStillHidden{
     width: 12vw;
     height: 13vw;
+    border-left: 2px solid #41362a;
+    background-image: url("../img/backCard/backCardHover3.jpg");
     box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -19px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
+    border-right: 1px solid #41362a;
   }
 
   @media (min-width: 1200px) {
@@ -190,8 +201,10 @@ textarea {
   .card:hover .cardStillHidden{
     width: 8.5vw;
     height: 9vw;
+    border-left: 2px solid #41362a;
+    background-image: url("../img/backCard/backCardHover2.jpg");
     box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -20px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
-    border-right: 1px solid rgb(36, 36, 36);
+    border-right: 1px solid #41362a;
   }
 }
 

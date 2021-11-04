@@ -1,0 +1,134 @@
+{
+    "pair1" : {
+        "card1" : {
+            "name" : "orange",
+            "src" : "img/colors/orange.jpg",
+            "alt" : "orange"
+        },
+        "card2" : {
+            "name" : "orange",
+            "src" : "img/colors/orangeText.jpg",
+            "alt" : "orange"
+        }
+    },
+    "pair2" : {
+        "card1" : {
+            "name" : "green",
+            "src" : "img/colors/green.jpg",
+            "alt" : "green"
+        },
+        "card2" : {
+            "name" : "green",
+            "src" : "img/colors/greenText.jpg",
+            "alt" : "green"
+        }
+    },
+    "pair3" : {
+        "card1" : {
+            "name" : "black",
+            "src" : "img/colors/black.jpg",
+            "alt" : "black"
+        },
+        "card2" : {
+            "name" : "black",
+            "src" : "img/colors/blackText.jpg",
+            "alt" : "black"
+        }
+    },
+    "pair4" : {
+        "card1" : {
+            "name" : "yellow", 
+            "src" : "img/colors/yellow.jpg",
+            "alt" : "yellow"
+        },
+        "card2" : {
+            "name" : "yellow", 
+            "src" : "img/colors/yellowText.jpg",
+            "alt" : "yellow"
+        }
+    },
+    "pair5" : {
+        "card1" : {
+            "name" : "blue",
+            "src" : "img/colors/blue.jpg",
+            "alt" : "blue"
+        },
+        "card2" : {
+            "name" : "blue",
+            "src" : "img/colors/blueText.jpg",
+            "alt" : "blue"
+        }
+    },
+    "pair6" : {
+        "card1" : {
+            "name" : "red",
+            "src" : "img/colors/red.jpg",
+            "alt" : "red"
+        },
+        "card2" : {
+            "name" : "red",
+            "src" : "img/colors/redText.jpg",
+            "alt" : "red"
+        }
+    },
+    "pair7" : {
+        "card1" : {
+            "name" : "purple",
+            "src" : "img/colors/purple.jpg",
+            "alt" : "purple"
+        },
+        "card2" : {
+            "name" : "purple",
+            "src" : "img/colors/purpleText.jpg",
+            "alt" : "purple"
+        }
+    },
+    "pair8" : {
+        "card1" : {
+            "name" : "pink",
+            "src" : "img/colors/pink.jpg",
+            "alt" : "pink"
+        },
+        "card2" : {
+            "name" : "pink",
+            "src" : "img/colors/pinkText.jpg",
+            "alt" : "pink"
+        }
+    },
+    "pair9" : {
+        "card1" : {
+            "name" : "brown",
+            "src" : "img/colors/brown.jpg",
+            "alt" : "brown"
+        },
+        "card2" : {
+            "name" : "brown",
+            "src" : "img/colors/brownText.jpg",
+            "alt" : "brown"
+        }
+    },
+    "pair10" : {
+        "card1" : {
+            "name" : "grey",
+            "src" : "img/colors/grey.jpg",
+            "alt" : "grey"
+        },
+        "card2" : {
+            "name" : "grey",
+            "src" : "img/colors/greyText.jpg",
+            "alt" : "grey"
+        }
+    },
+    "pair11" : {
+        "card1" : {
+            "name" : "white",
+            "src" : "img/colors/white.jpg",
+            "alt" : "white"
+        },
+        "card2" : {
+            "name" : "white",
+            "src" : "img/colors/whiteText.jpg",
+            "alt" : "white"
+        }
+    }
+}

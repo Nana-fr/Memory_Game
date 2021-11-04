@@ -10,6 +10,7 @@ let level = document.getElementById("level");
 
 let game = document.getElementById("game");
 
+let gameInfo = document.getElementById("gameInfo");
 let counter = document.getElementById("counter");
 let nbMoves = document.getElementById("nbMoves");
 let maxMoves = document.getElementById("maxMoves");
@@ -23,7 +24,7 @@ let deck = [];
 // FUNCTIONS
 
 function getCards(infoLevel) {
-    fetch('data/images.json')
+    fetch('data/colors.json')
     .then(function(response) {
         if(response.ok) {
             response.json().then(function(response){
@@ -121,7 +122,7 @@ function endGame(infoLevel) {
         if (!document.querySelector(".cardStillHidden")) {
             alert(`you win in ${nbMoves.innerText} moves.`);
             resetGame();
-        } else if (document.querySelector(".cardStillHidden") && nbMoves.innerText < 13) {
+        } else if (document.querySelector(".cardStillHidden") && nbMoves.innerText < 12) {
             document.body.classList.remove("disabledClick");
             chooseFirstCard(infoLevel);
         } else {
@@ -132,7 +133,7 @@ function endGame(infoLevel) {
         if (!document.querySelector(".cardStillHidden")) {
             alert(`you win in ${nbMoves.innerText} moves.`);
             resetGame();
-        } else if (document.querySelector(".cardStillHidden") && nbMoves.innerText < 10) {
+        } else if (document.querySelector(".cardStillHidden") && nbMoves.innerText < 9) {
             document.body.classList.remove("disabledClick");
             chooseFirstCard(infoLevel);
         } else {
@@ -150,6 +151,7 @@ function resetGame() {
         backCard.classList.add("cardStillHidden");
         backCard.parentElement.classList.remove("flip")
     });
+    gameInfo.classList.add("d-none");
     counter.classList.add("d-none");
     deck = [];
     document.body.classList.remove("disabledClick");
@@ -170,14 +172,16 @@ colors.onclick = function() {
 function setLevel(clicked_id) {
     level.classList.add("d-none");
     game.classList.remove("d-none");
+    gameInfo.classList.remove("d-none");
     counter.classList.remove("d-none");
     nbMoves.innerText = 0;
     let infoLevel = clicked_id;
     if (infoLevel === "difficult") {
-        maxMoves.innerText = "/10";
+        maxMoves.innerText = "/9";
     } else if (infoLevel === "medium") {
-        maxMoves.innerText = "/13";
+        maxMoves.innerText = "/12";
     }
+    gameInfo.innerText = `Level: ${infoLevel}`;
     getCards(infoLevel);
 }
 
