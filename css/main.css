@@ -125,13 +125,12 @@ textarea {
       width: 100%;
       backface-visibility: hidden;
     }
-  /* .back {
-   
-  } */
-  .cardStillHidden {
-    box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
+  .back {
     background-image: url("../img/backCard/backCard.jpg");
     background-size: cover;
+  }
+  .cardStillHidden {
+    box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
   }
   .front {
     box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
