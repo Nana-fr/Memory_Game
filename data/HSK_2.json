@@ -1,98 +1,98 @@
 {
     "pair1" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "dong",
+            "src" : "img/hsk_2/dong.jpg",
+            "alt" : "dong"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "dong",
+            "src" : "img/hsk_2/dongText.jpg",
+            "alt" : "dong"
         }
     },
     "pair2" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "lu",
+            "src" : "img/hsk_2/lu.jpg",
+            "alt" : "lu"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "lu",
+            "src" : "img/hsk_2/luText.jpg",
+            "alt" : "lu"
         }
     },
     "pair3" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "qing",
+            "src" : "img/hsk_2/qing.jpg",
+            "alt" : "qing"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "qing",
+            "src" : "img/hsk_2/qingText.jpg",
+            "alt" : "qing"
         }
     },
     "pair4" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "xiao",
+            "src" : "img/hsk_2/xiao.jpg",
+            "alt" : "xiao"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "xiao",
+            "src" : "img/hsk_2/xiaoText.jpg",
+            "alt" : "xiao"
         }
     },
     "pair5" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "xue",
+            "src" : "img/hsk_2/xue.jpg",
+            "alt" : "xue"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "xue",
+            "src" : "img/hsk_2/xueText.jpg",
+            "alt" : "xue"
         }
     },
     "pair6" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "yin",
+            "src" : "img/hsk_2/yin.jpg",
+            "alt" : "yin"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "yin",
+            "src" : "img/hsk_2/yinText.jpg",
+            "alt" : "yin"
         }
     },
     "pair7" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "yuan",
+            "src" : "img/hsk_2/yuan.jpg",
+            "alt" : "yuan"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "yuan",
+            "src" : "img/hsk_2/yuanText.jpg",
+            "alt" : "yuan"
         }
     },
     "pair8" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "zhao",
+            "src" : "img/hsk_2/zhao.jpg",
+            "alt" : "zhao"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_2/",
-            "alt" : ""
+            "name" : "zhao",
+            "src" : "img/hsk_2/zhaoText.jpg",
+            "alt" : "zhao"
         }
     }
 }

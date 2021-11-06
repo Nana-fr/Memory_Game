@@ -1,98 +1,98 @@
 {
     "pair1" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "akashi",
+            "src" : "img/jlpt_n1/akashi.jpg",
+            "alt" : "akashi"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "akashi",
+            "src" : "img/jlpt_n1/akashiText.jpg",
+            "alt" : "akashi"
         }
     },
     "pair2" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "ato",
+            "src" : "img/jlpt_n1/ato.jpg",
+            "alt" : "ato"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "ato",
+            "src" : "img/jlpt_n1/atoText.jpg",
+            "alt" : "ato"
         }
     },
     "pair3" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "hone",
+            "src" : "img/jlpt_n1/hone.jpg",
+            "alt" : "hone"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "hone",
+            "src" : "img/jlpt_n1/honeText.jpg",
+            "alt" : "hone"
         }
     },
     "pair4" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "kumo",
+            "src" : "img/jlpt_n1/kumo.jpg",
+            "alt" : "kumo"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "kumo",
+            "src" : "img/jlpt_n1/kumoText.jpg",
+            "alt" : "kumo"
         }
     },
     "pair5" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "matsuri",
+            "src" : "img/jlpt_n1/matsuri.jpg",
+            "alt" : "matsuri"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "matsuri",
+            "src" : "img/jlpt_n1/matsuriText.jpg",
+            "alt" : "matsuri"
         }
     },
     "pair6" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "tatami",
+            "src" : "img/jlpt_n1/tatami.jpg",
+            "alt" : "tatami"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "tatami",
+            "src" : "img/jlpt_n1/tatamiText.jpg",
+            "alt" : "tatami"
         }
     },
     "pair7" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "wa",
+            "src" : "img/jlpt_n1/wa.jpg",
+            "alt" : "wa"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "wa",
+            "src" : "img/jlpt_n1/waText.jpg",
+            "alt" : "wa"
         }
     },
     "pair8" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "yu",
+            "src" : "img/jlpt_n1/yu.jpg",
+            "alt" : "yu"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/jlpt_n1/",
-            "alt" : ""
+            "name" : "yu",
+            "src" : "img/jlpt_n1/yuText.jpg",
+            "alt" : "yu"
         }
     }
 }

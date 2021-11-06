@@ -1,98 +1,98 @@
 {
     "pair1" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "bai",
+            "src" : "img/hsk_6/bai.jpg",
+            "alt" : "bai"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "bai",
+            "src" : "img/hsk_6/baiText.jpg",
+            "alt" : "bai"
         }
     },
     "pair2" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "ba",
+            "src" : "img/hsk_6/ba.jpg",
+            "alt" : "ba"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "ba",
+            "src" : "img/hsk_6/baText.jpg",
+            "alt" : "ba"
         }
     },
     "pair3" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "cha",
+            "src" : "img/hsk_6/cha.jpg",
+            "alt" : "cha"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "cha",
+            "src" : "img/hsk_6/chaText.jpg",
+            "alt" : "cha"
         }
     },
     "pair4" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "chui",
+            "src" : "img/hsk_6/chui.jpg",
+            "alt" : "chui"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "chui",
+            "src" : "img/hsk_6/chuitext.jpg",
+            "alt" : "chui"
         }
     },
     "pair5" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "cuan",
+            "src" : "img/hsk_6/cuan.jpg",
+            "alt" : "cuan"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "cuan",
+            "src" : "img/hsk_6/cuanText.jpg",
+            "alt" : "cuan"
         }
     },
     "pair6" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "die",
+            "src" : "img/hsk_6/die.jpg",
+            "alt" : "die"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "die",
+            "src" : "img/hsk_6/dieText.jpg",
+            "alt" : "die"
         }
     },
     "pair7" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "dou",
+            "src" : "img/hsk_6/dou.jpg",
+            "alt" : "dou"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "dou",
+            "src" : "img/hsk_6/douText.jpg",
+            "alt" : "dou"
         }
     },
     "pair8" : {
         "card1" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "huang",
+            "src" : "img/hsk_6/huang.jpg",
+            "alt" : "huang"
         },
         "card2" : {
-            "name" : "",
-            "src" : "img/hsk_6/",
-            "alt" : ""
+            "name" : "huang",
+            "src" : "img/hsk_6/huangText.jpg",
+            "alt" : "huang"
         }
     }
 }

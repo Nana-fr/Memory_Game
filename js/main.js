@@ -114,7 +114,7 @@ function setLevel(infoTheme, url, clicked_id) {
         maxMoves[size].innerText = "/12";
     }
     levelInfo[size].innerText = `Level: ${infoLevel}`;
-    displayLayer("<h1>Start!!!</h1>");
+    displayLayer("<h3>Start!!!</h3>");
     getCards(infoLevel, url, size);
 }
 
@@ -210,29 +210,29 @@ function endGame(infoLevel, size) {
             document.body.classList.remove("disabledClick");
             chooseFirstCard(infoLevel, size); 
         } else {
-            displayLayer(`<h1>Congratulations!!!</h1><br> You win in ${nbMoves[size].innerText} moves.`);
+            displayLayer(`<h3>Congratulations!!!</h3><br> You win in ${nbMoves[size].innerText} moves.`);
            resetGame();
         }
     } else if (infoLevel === "Medium") {
         if (!document.querySelector(".cardStillHidden")) {
-            displayLayer(`<h1>Congratulations!!!</h1><br> You win in ${nbMoves[size].innerText} moves.`);
+            displayLayer(`<h3>Congratulations!!!</h3><br> You win in ${nbMoves[size].innerText} moves.`);
             resetGame();
         } else if (document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 12) {
             document.body.classList.remove("disabledClick");
             chooseFirstCard(infoLevel, size);
         } else {
-            displayLayer(`<h1>You lost!</h1><br> ${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.`);
+            displayLayer(`<h3>You lost!</h3><br> ${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.`);
             resetGame();
         }
     } else {
         if (!document.querySelector(".cardStillHidden")) {
-            displayLayer(`<h1>Congratulations!!!</h1><br> You win in ${nbMoves[size].innerText} moves.`);
+            displayLayer(`<h3>Congratulations!!!</h3><br> You win in ${nbMoves[size].innerText} moves.`);
             resetGame();
         } else if (document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 9) {
             document.body.classList.remove("disabledClick");
             chooseFirstCard(infoLevel, size);
         } else {
-            displayLayer(`<h1>You lost!</h1><br> ${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.`);
+            displayLayer(`<h3>You lost!</h3><br> ${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.`);
             resetGame();
         }
     }
@@ -260,6 +260,7 @@ function resetGame() {
 }
 
 // GAME
+
 
 launchGame.onclick = function() {
     startContainer.classList.add("d-none");
