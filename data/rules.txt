@@ -1,2 +1,14 @@
-<h1>Rules</h1>
-in progress
+<h3>Rules</h3><br>
+<h6>You have to find each complementary images to form a pair. When all the pairs have been found you win.</h6>
+<p class="text-decoration-underline">3 levels of difficulty:</p>
+<ul>
+<li>Easy: You can make as many moves as you want.</li>
+<li>Medium: You have to find all the pairs in 12 moves max.</li>
+<li>Difficult: You have to find all the pairs in 9 moves max.</li>
+</ul>
+<p class="text-decoration-underline">There are also 3 themes available:</p>
+<ul>
+<li>Chinese: Find the pinyin corresponding to the character</li>
+<li>Japonese: Find the kunyomi pronunciation of the kanji</li>
+<li>Colors: Find the color corresponding to the text</li>
+</ul>

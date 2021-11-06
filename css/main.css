@@ -86,6 +86,13 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   body {
+    background-image: url("../img/boardBG4.jpg");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+  }
+  
    #layer {
     background-color: rgba(0, 0, 0, 0.6);
     height: 100vh;
@@ -100,24 +107,19 @@ textarea {
    
    h1 {
      font-family: "Asian Guy";
-     font-size: 4rem;
+     font-size: 3.5rem;
      line-height: 3.5rem;
    }
   
+
+  header .dashboard {
+    background-image: url(../img/dashboard2.png);
+    background-size: 100% 100%;
+  }
+ 
    header {
     
-
     /* font-family: 'Bigelow Rules', cursive;  */
-
-    /* font-family: 'Eater', cursive; non*/
-
-    /* font-family: 'Emilys Candy', cursive; */
-
-    /* font-family: 'Gaegu', cursive; non */
-
-    /* font-family: 'Griffy', cursive; emily */
-
-    /* font-family: 'MedievalSharp', cursive; */
 
     /* font-family: 'Shojumaru', cursive;  */
 
@@ -134,13 +136,21 @@ textarea {
 .messageInfo {
   background-color: #fff;
   top: 25vh;
+  overflow: scroll;
+  height: 25vh;
 }
 
 .dashboard, h3 {
   font-family: 'Stick', sans-serif;
-  color: #642223;
+}
+h3 {
+  color: #822c2f;
 }
 
+.subtheme {
+  height: 50vh;
+  width: 80vw;
+}
 /* #startContainer {
   padding-top: 5rem;
 } */
@@ -156,18 +166,33 @@ textarea {
   }
   
   aside {
-    width: 20vw;
-    background-color: rgba(0, 0, 0, 0.308);
-  }
-  body {
-    background-image: url("../img/boardBG4.jpg");
+    box-sizing: border-box;
+    margin-left: 0.5rem;
+    margin-right: 4rem;
+    width: 25vw;
+    /* background-color: rgba(0, 0, 0, 0.308); */
+    background-image: url(../img/dashboard1.png);
     background-size: 100% 100%;
-    width: 100%;
-    height: 100vh;
+    /* background-color: #fed09e65; */
+    color: #fed09ea8;
+    font-size: 1.3rem;
   }
+  aside .btn {
+    font-size: 1.3rem;
+  }
+  #confucius {
+    margin-top: 1rem;
+    font-size: 3rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Bigelow Rules', cursive;
+    padding-bottom: 1rem;
+  }
+ 
  
   .board {
     width: 100%;
+    height: 100%;
   }
   
   .disabledClick {
@@ -237,6 +262,7 @@ textarea {
      }
   }
 
+
   @media (min-width: 576px) {
       .card {
         width: 23vw;
@@ -246,6 +272,12 @@ textarea {
       width: 22vw;
       height: 23vw;
       box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.4), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -16px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.4);
+    }
+    header .dashboard, .btn {
+      font-size: 1.5rem;
+    }
+    h1 {
+      font-size: 5rem;
     }
   }
 
@@ -284,6 +316,13 @@ textarea {
       background-position: center bottom;
       background-size: cover;
     } */
+    h1 {
+      font-size: 6rem;
+    }
+    /* header {
+      padding-top: ;
+    } */
+    
   }
   
   
@@ -301,6 +340,15 @@ textarea {
     box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -20px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
     border-right: 1px solid #41362a;
   }
+    aside {
+    margin-left: 5rem;
+    margin-right: 0rem;
+    width: 20vw;
+    }
+    #confucius {
+      padding-bottom: 0rem;
+    }
+   
 }
 
 /* ==========================================================================
