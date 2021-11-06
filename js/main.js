@@ -1,6 +1,7 @@
 // GLOBAL VARIABLES
 
 let launchGame = document.getElementById("launchGame");
+let rules = document.getElementById("messageInfo");
 let startContainer = document.getElementById("startContainer");
 
 let theme = document.getElementById("theme");
@@ -29,6 +30,7 @@ let deck = [];
 
 function displayRules() {
     document.getElementById("layer").classList.remove("d-none");
+    rules.classList.add("containerRules");
     let httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
@@ -47,6 +49,7 @@ function displayLayer(text) {
 }
 
 function closeLayer() {
+    rules.classList.remove("containerRules");
     document.getElementById("layer").classList.add("d-none");
 }
 
@@ -210,29 +213,29 @@ function endGame(infoLevel, size) {
             document.body.classList.remove("disabledClick");
             chooseFirstCard(infoLevel, size); 
         } else {
-            displayLayer(`<h3>Congratulations!!!</h3><br> You win in ${nbMoves[size].innerText} moves.`);
+            displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves[size].innerText} moves.<h5>`);
            resetGame();
         }
     } else if (infoLevel === "Medium") {
         if (!document.querySelector(".cardStillHidden")) {
-            displayLayer(`<h3>Congratulations!!!</h3><br> You win in ${nbMoves[size].innerText} moves.`);
+            displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves[size].innerText} moves.</h5>`);
             resetGame();
         } else if (document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 12) {
             document.body.classList.remove("disabledClick");
             chooseFirstCard(infoLevel, size);
         } else {
-            displayLayer(`<h3>You lost!</h3><br> ${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.`);
+            displayLayer(`<h3>You lost!</h3><br><h5>${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.</h5>`);
             resetGame();
         }
     } else {
         if (!document.querySelector(".cardStillHidden")) {
-            displayLayer(`<h3>Congratulations!!!</h3><br> You win in ${nbMoves[size].innerText} moves.`);
+            displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves[size].innerText} moves.</h5>`);
             resetGame();
         } else if (document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 9) {
             document.body.classList.remove("disabledClick");
             chooseFirstCard(infoLevel, size);
         } else {
-            displayLayer(`<h3>You lost!</h3><br> ${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.`);
+            displayLayer(`<h3>You lost!</h3><br><h5>${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.</h5>`);
             resetGame();
         }
     }

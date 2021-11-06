@@ -102,7 +102,7 @@ textarea {
 
   @font-face {
     font-family: "Asian Guy";
-    src: url("/Asian\ Guy.ttf") format("truetype");
+    src: url("../font/Asian\ Guy.ttf") format("truetype");
    }
    
    h1 {
@@ -133,11 +133,13 @@ textarea {
     margin: 0;
   }
   
-.messageInfo {
+#messageInfo {
   background-color: #fff;
   top: 25vh;
-  overflow: scroll;
-  height: 25vh;
+}
+.containerRules {
+ overflow: scroll;
+  height: 40vh;
 }
 
 .dashboard, h3 {
@@ -151,9 +153,7 @@ h3 {
   height: 50vh;
   width: 80vw;
 }
-/* #startContainer {
-  padding-top: 5rem;
-} */
+
   .btn {
     border: 1px solid #000;
     background-color: #fed09e;
@@ -170,10 +170,8 @@ h3 {
     margin-left: 0.5rem;
     margin-right: 4rem;
     width: 25vw;
-    /* background-color: rgba(0, 0, 0, 0.308); */
     background-image: url(../img/dashboard1.png);
     background-size: 100% 100%;
-    /* background-color: #fed09e65; */
     color: #fed09ea8;
     font-size: 1.3rem;
   }
@@ -198,14 +196,14 @@ h3 {
   .disabledClick {
     pointer-events: none;
   }
-  
+  /* cards */
   .card {
       border: none;
       border-radius: 50%;
       background-color: transparent;
       box-shadow: inset 6em -1.5em 4em rgba(36, 36, 36, 0.05);
-      width: 28vw;
-      height: 28vw;
+      width: 27vw;
+      height: 27vw;
       perspective: 400px;
   }
   .innerCard {
@@ -238,8 +236,8 @@ h3 {
   }
 
   .card:hover .cardStillHidden{
-    width: 27vw;
-    height: 28vw;
+    width: 26vw;
+    height: 27vw;
     border-left: 2px solid #41362a;
     background-image: url("../img/backCard/backCardHover.jpg");
     background-size: cover;
@@ -261,7 +259,6 @@ h3 {
       background-size: cover;
      }
   }
-
 
   @media (min-width: 576px) {
       .card {
@@ -295,9 +292,11 @@ h3 {
       box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -18px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
       border-right: 1px solid #41362a;
     }
+    h3 {
+      font-size: 3rem;
+    }
   }
  
-
   @media (min-width: 992px) {
     .card {
       width: 13vw;
@@ -311,22 +310,11 @@ h3 {
       box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -19px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
       border-right: 1px solid #41362a;
     }
-    /* body {
-      background-image: url("../img/boardBG3.jpg");
-      background-position: center bottom;
-      background-size: cover;
-    } */
     h1 {
       font-size: 6rem;
-    }
-    /* header {
-      padding-top: ;
-    } */
-    
+    } 
   }
   
-  
-
   @media (min-width: 1200px) {
     .card {
       width: 9vw;
@@ -348,7 +336,6 @@ h3 {
     #confucius {
       padding-bottom: 0rem;
     }
-   
 }
 
 /* ==========================================================================
