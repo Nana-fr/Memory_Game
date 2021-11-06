@@ -46,6 +46,7 @@ function displayRules() {
 function displayLayer(text) {
     document.getElementById("layer").classList.remove("d-none");
     p.innerHTML = text;
+    document.querySelector("audio").play();
 }
 
 function closeLayer() {

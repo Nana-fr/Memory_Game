@@ -139,7 +139,7 @@ textarea {
 }
 .containerRules {
  overflow: scroll;
-  height: 40vh;
+  height: 60vh;
 }
 
 .dashboard, h3 {
@@ -183,7 +183,7 @@ h3 {
     font-size: 3rem;
     writing-mode: vertical-rl;
     text-orientation: upright;
-    font-family: 'Bigelow Rules', cursive;
+    font-family: 'Ma Shan Zheng', cursive;
     padding-bottom: 1rem;
   }
  
@@ -258,6 +258,8 @@ h3 {
       background-position: center bottom;
       background-size: cover;
      }
+     
+     
   }
 
   @media (min-width: 576px) {

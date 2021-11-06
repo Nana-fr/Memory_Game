@@ -7,9 +7,10 @@
 
 # THANKS
 
-    https://www.uidownload.com for backCard image
+    https://www.uidownload.com for backCard image and border
     https://getwallpapers.com/wallpaper/full/0/a/1/610018.jpg for board background
     https://www.dafont.com/asian-guy.font pi luo chiu
+    https://orangefreesounds.com/wp-content/uploads/2014/11/Gong-sound.mp3
 
 # TECHNOLOGY COLOPHON
 
