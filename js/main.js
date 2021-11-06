@@ -62,7 +62,18 @@ function setTheme(clicked_id) {
         selectLevel(infoTheme, url)
     } else if (clicked_id === "Chinese") {
         subtheme[0].classList.remove("d-none");
-        for (let button of subtheme[0].children) {
+        let buttons = subtheme[0].children;
+        for (let button of buttons[0].children) {
+            button.onclick = function(){
+                infoTheme += ` ${this.id}`;
+                let url = this.value;
+                subtheme[0].classList.add("d-none");
+                level.classList.remove("d-none");
+                selectLevel(infoTheme, url)
+            }
+        }
+        for (let button of buttons[1].children) {
+            console.log(button)
             button.onclick = function(){
                 infoTheme += ` ${this.id}`;
                 let url = this.value;

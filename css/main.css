@@ -202,8 +202,8 @@ h3 {
       border-radius: 50%;
       background-color: transparent;
       box-shadow: inset 6em -1.5em 4em rgba(36, 36, 36, 0.05);
-      width: 27vw;
-      height: 27vw;
+      width: 26vw;
+      height: 26vw;
       perspective: 400px;
   }
   .innerCard {
@@ -236,8 +236,8 @@ h3 {
   }
 
   .card:hover .cardStillHidden{
-    width: 26vw;
-    height: 27vw;
+    width: 25vw;
+    height: 26vw;
     border-left: 2px solid #41362a;
     background-image: url("../img/backCard/backCardHover.jpg");
     background-size: cover;
