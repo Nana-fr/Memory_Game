@@ -1,25 +1,30 @@
 // GLOBAL VARIABLES
 
+let startContainer = document.getElementById("startContainer");
 let launchGame = document.getElementById("launchGame");
 let rules = document.getElementById("messageInfo");
-let startContainer = document.getElementById("startContainer");
 
+// layer
+let p = document.getElementById("message");
+
+// settings variables
 let theme = document.getElementById("theme");
 let Colors = document.getElementById("Colors");
 let subtheme = document.getElementsByClassName("subtheme");
-let themeInfo = document.getElementsByClassName("themeInfo");
 let level = document.getElementById("level");
 
+// playing zone variables
+let game = document.getElementById("game");
+let board = document.getElementsByClassName("board");
+
+// dashboard variables
 let dashboard = document.getElementsByClassName("dashboard");
+let themeInfo = document.getElementsByClassName("themeInfo");
 let levelInfo = document.getElementsByClassName("levelInfo");
 let nbMoves = document.getElementsByClassName("nbMoves");
 let maxMoves = document.getElementsByClassName("maxMoves");
 
-let p = document.getElementById("message");
-
-let game = document.getElementById("game");
-let board = document.getElementsByClassName("board");
-
+// cards variables
 let cards = document.getElementsByClassName("cardStillHidden");
 let firstCardFace = "";
 let secondCardFace = "";
@@ -28,6 +33,7 @@ let deck = [];
 
 // FUNCTIONS
 
+// layer functions
 function displayRules() {
     document.getElementById("layer").classList.remove("d-none");
     rules.classList.add("containerRules");
@@ -46,13 +52,14 @@ function displayRules() {
 function displayLayer(text) {
     document.getElementById("layer").classList.remove("d-none");
     p.innerHTML = text;
-    document.querySelector("audio").play();
 }
 
 function closeLayer() {
     rules.classList.remove("containerRules");
     document.getElementById("layer").classList.add("d-none");
 }
+
+// settings functions
 
 function setTheme(clicked_id) {
     theme.classList.add("d-none");
@@ -65,35 +72,26 @@ function setTheme(clicked_id) {
         subtheme[0].classList.remove("d-none");
         let buttons = subtheme[0].children;
         for (let button of buttons[0].children) {
-            button.onclick = function(){
-                infoTheme += ` ${this.id}`;
-                let url = this.value;
-                subtheme[0].classList.add("d-none");
-                level.classList.remove("d-none");
-                selectLevel(infoTheme, url)
-            }
+            makeClickableBtn(infoTheme, button, 0);
         }
         for (let button of buttons[1].children) {
-            console.log(button)
-            button.onclick = function(){
-                infoTheme += ` ${this.id}`;
-                let url = this.value;
-                subtheme[0].classList.add("d-none");
-                level.classList.remove("d-none");
-                selectLevel(infoTheme, url)
-            }
+            makeClickableBtn(infoTheme, button, 0);
         }
     } else {
         subtheme[1].classList.remove("d-none");
         for (let button of subtheme[1].children) {
-            button.onclick = function(){
-            infoTheme += ` ${this.id}`;
-            let url = this.value;
-            subtheme[1].classList.add("d-none");
-            level.classList.remove("d-none");
-            selectLevel(infoTheme, url)
-            }
+            makeClickableBtn(infoTheme, button, 1);
         }
+    }
+}
+
+function makeClickableBtn(infoTheme, button, n) {
+    button.onclick = function(){
+        infoTheme += ` ${this.id}`;
+        let url = this.value;
+        subtheme[n].classList.add("d-none");
+        level.classList.remove("d-none");
+        selectLevel(infoTheme, url)
     }
 }
 
@@ -106,7 +104,6 @@ function selectLevel(infoTheme, url) {
     }
 }
 
-
 function setLevel(infoTheme, url, clicked_id) {
     level.classList.add("d-none");
     game.classList.remove("d-none");
@@ -114,7 +111,6 @@ function setLevel(infoTheme, url, clicked_id) {
     if (window.innerWidth<992){
         size = 0;
         dashboard[0].previousElementSibling.classList.add("d-none");
-        console.log(dashboard[0].previousElementSibling);
     } else {
         board[0].style.width="62vw";
         size = 1;
@@ -130,6 +126,7 @@ function setLevel(infoTheme, url, clicked_id) {
     }
     levelInfo[size].innerText = `Level: ${infoLevel}`;
     displayLayer("<h3>Start!!!</h3>");
+    document.querySelector("audio").play();
     getCards(infoLevel, url, size);
 }
 
@@ -183,6 +180,8 @@ function dealCards(infoLevel, size) {
     chooseFirstCard(infoLevel, size)
 }
 
+// playing functions
+
 function chooseFirstCard(infoLevel, size) {
     for (let card of cards) {
         card.onclick = function(){
@@ -229,7 +228,7 @@ function endGame(infoLevel, size) {
            resetGame();
         }
     } else if (infoLevel === "Medium") {
-        if (!document.querySelector(".cardStillHidden")) {
+        if (!document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 13) {
             displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves[size].innerText} moves.</h5>`);
             resetGame();
         } else if (document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 12) {
@@ -240,7 +239,7 @@ function endGame(infoLevel, size) {
             resetGame();
         }
     } else {
-        if (!document.querySelector(".cardStillHidden")) {
+        if (!document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 10) {
             displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves[size].innerText} moves.</h5>`);
             resetGame();
         } else if (document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 9) {
@@ -253,6 +252,7 @@ function endGame(infoLevel, size) {
     }
 }
 
+// quit game function
 function resetGame() {
     let size;
     if (window.innerWidth<992){
@@ -262,8 +262,6 @@ function resetGame() {
         board[0].style.width="100vw";
         size = 1;
     }
-    game.classList.add("d-none");
-    startContainer.classList.remove("d-none");
     let backCards = document.querySelectorAll(".back");
     backCards.forEach(function(backCard){
         backCard.classList.add("cardStillHidden");
@@ -272,10 +270,11 @@ function resetGame() {
     dashboard[size].classList.add("d-none");
     deck = [];
     document.body.classList.remove("disabledClick");
+    game.classList.add("d-none");
+    startContainer.classList.remove("d-none");
 }
 
 // GAME
-
 
 launchGame.onclick = function() {
     startContainer.classList.add("d-none");

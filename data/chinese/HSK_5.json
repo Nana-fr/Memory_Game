@@ -31,7 +31,7 @@
         },
         "card2" : {
             "name" : "chai",
-            "src" : "img/hsk_5/chai.jpg",
+            "src" : "img/hsk_5/chaiText.jpg",
             "alt" : "chai"
         }
     },
@@ -67,7 +67,7 @@
         },
         "card2" : {
             "name" : "chuang",
-            "src" : "img/hsk_5/chuang.jpg",
+            "src" : "img/hsk_5/chuangText.jpg",
             "alt" : "chuang"
         }
     },

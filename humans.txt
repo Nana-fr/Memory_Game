@@ -7,10 +7,18 @@
 
 # THANKS
 
+    image:
     https://www.uidownload.com for backCard image and border
-    https://getwallpapers.com/wallpaper/full/0/a/1/610018.jpg for board background
-    https://www.dafont.com/asian-guy.font pi luo chiu
+    https://getwallpapers.com/wallpaper/full/0/a/1/610018.jpg for background
+    
+    sound:
     https://orangefreesounds.com/wp-content/uploads/2014/11/Gong-sound.mp3
+
+    font-family:
+    https://www.dafont.com/asian-guy.font by pi luo chiu
+    https://fonts.google.com    Stick by Fontworks Inc.
+                                Ma Shan Zheng by Ma ShanZheng
+
 
 # TECHNOLOGY COLOPHON
 
