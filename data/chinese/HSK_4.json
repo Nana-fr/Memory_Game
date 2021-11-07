@@ -1,0 +1,98 @@
+{
+    "pair1" : {
+        "card1" : {
+            "name" : "cai",
+            "src" : "img/hsk_4/cai.jpg",
+            "alt" : "cai"
+        },
+        "card2" : {
+            "name" : "cai",
+            "src" : "img/hsk_4/caiText.jpg",
+            "alt" : "cai"
+        }
+    },
+    "pair2" : {
+        "card1" : {
+            "name" : "chang",
+            "src" : "img/hsk_4/chang.jpg",
+            "alt" : "chang"
+        },
+        "card2" : {
+            "name" : "chang",
+            "src" : "img/hsk_4/changText.jpg",
+            "alt" : "chang"
+        }
+    },
+    "pair3" : {
+        "card1" : {
+            "name" : "gan",
+            "src" : "img/hsk_4/gan.jpg",
+            "alt" : ""
+        },
+        "card2" : {
+            "name" : "gan",
+            "src" : "img/hsk_4/ganText.jpg",
+            "alt" : "gan"
+        }
+    },
+    "pair4" : {
+        "card1" : {
+            "name" : "guang",
+            "src" : "img/hsk_4/guang.jpg",
+            "alt" : "guang"
+        },
+        "card2" : {
+            "name" : "guang",
+            "src" : "img/hsk_4/guangText.jpg",
+            "alt" : "guang"
+        }
+    },
+    "pair5" : {
+        "card1" : {
+            "name" : "guang4",
+            "src" : "img/hsk_4/guang4.jpg",
+            "alt" : "guang4"
+        },
+        "card2" : {
+            "name" : "guang4",
+            "src" : "img/hsk_4/guang4text.jpg",
+            "alt" : "guang4"
+        }
+    },
+    "pair6" : {
+        "card1" : {
+            "name" : "luan",
+            "src" : "img/hsk_4/luan.jpg",
+            "alt" : "luan"
+        },
+        "card2" : {
+            "name" : "luan",
+            "src" : "img/hsk_4/luanText.jpg",
+            "alt" : "luan"
+        }
+    },
+    "pair7" : {
+        "card1" : {
+            "name" : "meng",
+            "src" : "img/hsk_4/meng.jpg",
+            "alt" : "meng"
+        },
+        "card2" : {
+            "name" : "meng",
+            "src" : "img/hsk_4/mengText.jpg",
+            "alt" : "meng"
+        }
+    },
+    "pair8" : {
+        "card1" : {
+            "name" : "qiao",
+            "src" : "img/hsk_4/qiao.jpg",
+            "alt" : "qiao"
+        },
+        "card2" : {
+            "name" : "qiao",
+            "src" : "img/hsk_4/qiaoText.jpg",
+            "alt" : "qiao"
+        }
+    }
+}

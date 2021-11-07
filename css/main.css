@@ -86,42 +86,253 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-   .disabledClick {
-    pointer-events: none;
+  
+   @font-face {
+    font-family: "Asian Guy";
+    src: url("../font/Asian\ Guy.ttf") format("truetype");
   }
   
-  .card {
-      border: none;
-      width: 90px;
-      height: 90px;
-      perspective: 400px;
+  /* GENERAL RULES */
+
+  body {
+    background-image: url("../img/background/bg_portrait.jpg");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
   }
-  .innerCard {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      position: relative;
-      transition: transform 0.7s;
-      transform-style: preserve-3d;
-      transform-origin: center right;
-  }
-  .cardFace {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      backface-visibility: hidden;
-    }
-  .back {
-      background-color: gray;
-  }
-  .front {
-      transform: rotateY( 180deg );
-  }
-  .flip {
-      transform: translateX(-100%) rotateY(-180deg);
+  
+  #layer {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
   }
 
+  h1, p, h3 {
+    margin: 0;
+  }
+  h1 {
+    font-family: "Asian Guy";
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+  h3 {
+    color: #822c2f;
+  }
+
+  header {
+    color: #642223;
+  }
+  
+
+  /* UTILITY CLASSES */
+  
+  #messageInfo {
+    background-color: #fff;
+    top: 25vh;
+  }
+  .containerRules {
+  overflow: scroll;
+    height: 60vh;
+  }
+  
+  .subtheme {
+    height: 50vh;
+    width: 80vw;
+  }
+
+  .btn {
+    border: 1px solid #000;
+    background-color: #fed09e;
+    color: #822c2f;
+    font-family: 'Stick', sans-serif;
+    font-size: 1rem;
+  }
+
+  header .dashboard {
+    background-image: url(../img/dashboard/dashboardPortrait.png);
+    background-size: 100% 100%;
+  }
+
+  .dashboard, h3 {
+    font-family: 'Stick', sans-serif;
+  }
+
+  .board {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .disabledClick {
+    pointer-events: none;
+  }
+
+  /* ##### DASHBOARD landscape ##### */
+
+  aside {
+    box-sizing: border-box;
+    margin-left: 0.5rem;
+    margin-right: 4rem;
+    width: 25vw;
+    background-image: url(../img/dashboard/dashboardLandscape.png);
+    background-size: 100% 100%;
+    color: #fed09ea8;
+    font-size: 1.3rem;
+  }
+  aside .btn {
+    font-size: 1.3rem;
+  }
+  #confucius {
+    margin-top: 1rem;
+    font-size: 3rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Ma Shan Zheng', cursive;
+    padding-bottom: 1rem;
+  }
+
+  /* ##### CARDS ##### */
+  
+  .card {
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: inset 6em -1.5em 4em rgba(36, 36, 36, 0.05);
+    width: 26vw;
+    height: 26vw;
+    perspective: 400px;
+  }
+  .innerCard {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+  }
+  .cardFace {
+    position: absolute;
+    border: 1px solid #000;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+  }
+  .back {
+    background-image: url("../img/backCard/backCard.jpg");
+    background-size: cover;
+  }
+  .cardStillHidden {
+    box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
+  }
+  .front {
+    box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
+    transform: rotateY(180deg);
+  }
+
+  .card:hover .cardStillHidden {
+    width: 25vw;
+    height: 26vw;
+    border-left: 2px solid #41362a;
+    background-image: url("../img/backCard/backCardHover.jpg");
+    background-size: cover;
+    box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.4), -6px 0.8vw 0.7vw -0.5vw rgba(0, 0, 0, 0.2), -12px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.4);
+    border-right: 1px solid #41362a;
+  }
+
+  .flip {
+    transform: translateX(-100%) rotateY(180deg);
+  }
+
+  /* ##### MEDIA QUERY ##### */
+
+  @media screen and (orientation:landscape)
+  {
+    body {
+      background-image: url("../img/background/bg_landscape.jpg");
+      background-position: center bottom;
+      background-size: cover;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .card {
+      width: 23vw;
+      height: 23vw;
+    }
+    .card:hover .cardStillHidden {
+      width: 22vw;
+      height: 23vw;
+      box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.4), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -16px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.4);
+    }
+    header .dashboard, .btn {
+      font-size: 1.5rem;
+    }
+    h1 {
+      font-size: 5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .card {
+      width: 18vw;
+      height: 18vw;
+      perspective: 600px;
+    }
+    .card:hover .cardStillHidden {
+      width: 17vw;
+      height: 18vw;
+      border-left: 2px solid #41362a;
+      background-image: url("../img/backCard/backCardHover2.jpg");
+      box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -18px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
+      border-right: 1px solid #41362a;
+    }
+    h3 {
+      font-size: 3rem;
+    }
+  }
+ 
+  @media (min-width: 992px) {
+    .card {
+      width: 13vw;
+      height: 13vw;
+    }
+    .card:hover .cardStillHidden{
+      width: 12vw;
+      height: 13vw;
+      border-left: 2px solid #41362a;
+      background-image: url("../img/backCard/backCardHover3.jpg");
+      box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -19px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
+      border-right: 1px solid #41362a;
+    }
+    h1 {
+      font-size: 6rem;
+    } 
+  }
+  
+  @media (min-width: 1200px) {
+    .card {
+      width: 9vw;
+      height: 9vw;
+    }
+    .card:hover .cardStillHidden {
+      width: 8.5vw;
+      height: 9vw;
+      border-left: 2px solid #41362a;
+      background-image: url("../img/backCard/backCardHover2.jpg");
+      box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -20px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
+      border-right: 1px solid #41362a;
+    }
+    aside {
+      margin-left: 5rem;
+      margin-right: 0rem;
+      width: 20vw;
+    }
+    #confucius {
+      padding-bottom: 0.5rem;
+    }
+  }
 
 /* ==========================================================================
    Helper classes

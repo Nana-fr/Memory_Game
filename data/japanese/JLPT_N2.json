@@ -1,0 +1,98 @@
+{
+    "pair1" : {
+        "card1" : {
+            "name" : "hashi",
+            "src" : "img/jlpt_n2/hashi.jpg",
+            "alt" : "hashi"
+        },
+        "card2" : {
+            "name" : "hashi",
+            "src" : "img/jlpt_n2/hashiText.jpg",
+            "alt" : "hashi"
+        }
+    },
+    "pair2" : {
+        "card1" : {
+            "name" : "ike",
+            "src" : "img/jlpt_n2/ike.jpg",
+            "alt" : "ike"
+        },
+        "card2" : {
+            "name" : "ike",
+            "src" : "img/jlpt_n2/ikeText.jpg",
+            "alt" : "ike"
+        }
+    },
+    "pair3" : {
+        "card1" : {
+            "name" : "mori",
+            "src" : "img/jlpt_n2/mori.jpg",
+            "alt" : "mori"
+        },
+        "card2" : {
+            "name" : "mori",
+            "src" : "img/jlpt_n2/moriText.jpg",
+            "alt" : "mori"
+        }
+    },
+    "pair4" : {
+        "card1" : {
+            "name" : "mura",
+            "src" : "img/jlpt_n2/mura.jpg",
+            "alt" : "mura"
+        },
+        "card2" : {
+            "name" : "mura",
+            "src" : "img/jlpt_n2/muraText.jpg",
+            "alt" : "mura"
+        }
+    },
+    "pair5" : {
+        "card1" : {
+            "name" : "sakai",
+            "src" : "img/jlpt_n2/sakai.jpg",
+            "alt" : "sakai"
+        },
+        "card2" : {
+            "name" : "sakai",
+            "src" : "img/jlpt_n2/sakaiText.jpg",
+            "alt" : "sakai"
+        }
+    },
+    "pair6" : {
+        "card1" : {
+            "name" : "shima",
+            "src" : "img/jlpt_n2/shima.jpg",
+            "alt" : "shima"
+        },
+        "card2" : {
+            "name" : "shima",
+            "src" : "img/jlpt_n2/shimaText.jpg",
+            "alt" : "shima"
+        }
+    },
+    "pair7" : {
+        "card1" : {
+            "name" : "shiro",
+            "src" : "img/jlpt_n2/shiro.jpg",
+            "alt" : "shiro"
+        },
+        "card2" : {
+            "name" : "shiro",
+            "src" : "img/jlpt_n2/shiroText.jpg",
+            "alt" : "shiro"
+        }
+    },
+    "pair8" : {
+        "card1" : {
+            "name" : "take",
+            "src" : "img/jlpt_n2/take.jpg",
+            "alt" : "take"
+        },
+        "card2" : {
+            "name" : "take",
+            "src" : "img/jlpt_n2/takeText.jpg",
+            "alt" : "take"
+        }
+    }
+}
