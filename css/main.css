@@ -131,8 +131,8 @@ textarea {
     background-color: #fff;
     top: 25vh;
   }
-  .containerRules {
-  overflow: scroll;
+  .overflow {
+  overflow: auto;
     height: 60vh;
   }
   
@@ -154,7 +154,7 @@ textarea {
     background-size: 100% 100%;
   }
 
-  .dashboard, h3 {
+  .dashboard, h3, .table {
     font-family: 'Stick', sans-serif;
   }
 
@@ -166,6 +166,23 @@ textarea {
   .disabledClick {
     pointer-events: none;
   }
+
+  /* ##### RECORDS ##### */
+
+  .table {
+    background-color: #fed09e;
+    color: #822c2f;
+  }
+  th {
+    vertical-align: middle;
+  }
+  tr:nth-child(3n) {
+    border-bottom: 1px solid #642223;
+  }
+  tbody>tr:nth-child(odd) {
+    background-color: #ffddb8;
+  }
+  tbody>tr:hover {background-color: #822c2f; color: #fed09e}
 
   /* ##### DASHBOARD landscape ##### */
 

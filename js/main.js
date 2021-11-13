@@ -3,6 +3,8 @@
 let startContainer = document.getElementById("startContainer");
 let launchGame = document.getElementById("launchGame");
 let rules = document.getElementById("messageInfo");
+let records = document.getElementById("records");
+let nameRegex= /^[\p{Letter}]{3,20}$|^[\p{Letter}]+[-][\p{Letter}]+$|^[\p{Script=Han}]{2,3}$/gui;
 
 // layer
 let p = document.getElementById("message");
@@ -36,7 +38,7 @@ let deck = [];
 // layer functions
 function displayRules() {
     document.getElementById("layer").classList.remove("d-none");
-    rules.classList.add("containerRules");
+    p.classList.add("overflow");
     let httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
@@ -55,8 +57,115 @@ function displayLayer(text) {
 }
 
 function closeLayer() {
-    rules.classList.remove("containerRules");
+    p.classList.remove("overflow");
     document.getElementById("layer").classList.add("d-none");
+}
+
+function displayRecords() {
+    document.getElementById("layer").classList.remove("d-none");
+    p.classList.add("overflow");
+    let table = document.getElementById("table");
+    table.innerHTML = `<tr><td>Chinese HSK1</td><td>Easy</td><td>${localStorage.getItem("Chinese HSK-1 Easy").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-1 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Chinese HSK-1 Medium").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-1 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Chinese HSK-1 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-1 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Chinese HSK2</td><td>Easy</td><td>${localStorage.getItem("Chinese HSK-2 Easy").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-2 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Chinese HSK-2 Medium").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-2 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Chinese HSK-2 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-2 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Chinese HSK3</td><td>Easy</td><td>${localStorage.getItem("Chinese HSK-3 Easy").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-3 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Chinese HSK-3 Medium").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-3 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Chinese HSK-3 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-3 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Chinese HSK4</td><td>Easy</td><td>${localStorage.getItem("Chinese HSK-4 Easy").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-4 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Chinese HSK-4 Medium").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-4 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Chinese HSK-4 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-4 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Chinese HSK5</td><td>Easy</td><td>${localStorage.getItem("Chinese HSK-5 Easy").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-5 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Chinese HSK-5 Medium").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-5 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Chinese HSK-5 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-5 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Chinese HSK6</td><td>Easy</td><td>${localStorage.getItem("Chinese HSK-6 Easy").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-6 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Chinese HSK-6 Medium").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-6 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Chinese HSK-6 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-6 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Japanese JLPT-N5</td><td>Easy</td><td>${localStorage.getItem("Japanese JLPT-N5 Easy").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N5 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Japanese JLPT-N5 Medium").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N5 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Japanese JLPT-N5 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N5 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Japanese JLPT-N4</td><td>Easy</td><td>${localStorage.getItem("Japanese JLPT-N4 Easy").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N4 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Japanese JLPT-N4 Medium").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N4 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Japanese JLPT-N4 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N4 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Japanese JLPT-N3</td><td>Easy</td><td>${localStorage.getItem("Japanese JLPT-N3 Easy").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N3 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Japanese JLPT-N3 Medium").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N3 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Japanese JLPT-N3 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N3 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Japanese JLPT-N2</td><td>Easy</td><td>${localStorage.getItem("Japanese JLPT-N2 Easy").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Japanese JLPT-N2 Medium").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Japanese JLPT-N2 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Japanese JLPT-N1</td><td>Easy</td><td>${localStorage.getItem("Japanese JLPT-N1 Easy").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Japanese JLPT-N1 Medium").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Japanese JLPT-N1 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Difficult").split(",")[1]}</td></tr>
+                      
+                      <tr><td>Colors</td><td>Easy</td><td>${localStorage.getItem("Colors Easy").split(",")[0]}</td><td>${localStorage.getItem("Colors Easy").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Colors Medium").split(",")[0]}</td><td>${localStorage.getItem("Colors Medium").split(",")[1]}</td></tr>
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Colors Difficult").split(",")[0]}</td><td>${localStorage.getItem("Colors Difficult").split(",")[1]}</td></tr>`;
+    p.innerHTML = records.innerHTML;
+}
+
+// initialization local storage
+
+function setStorage() {
+    localStorage.setItem("informed", true);
+    localStorage.setItem('Chinese HSK-1 Easy', ["", ""]);
+    localStorage.setItem('Chinese HSK-1 Medium', ["", ""]);
+    localStorage.setItem('Chinese HSK-1 Difficult', ["", ""]);
+    
+    localStorage.setItem('Chinese HSK-2 Easy', ["", ""]);
+    localStorage.setItem('Chinese HSK-2 Medium', ["", ""]);
+    localStorage.setItem('Chinese HSK-2 Difficult', ["", ""]);
+    
+    localStorage.setItem('Chinese HSK-3 Easy', ["", ""]);
+    localStorage.setItem('Chinese HSK-3 Medium', ["", ""]);
+    localStorage.setItem('Chinese HSK-3 Difficult', ["", ""]);
+    
+    localStorage.setItem('Chinese HSK-4 Easy', ["", ""]);
+    localStorage.setItem('Chinese HSK-4 Medium', ["", ""]);
+    localStorage.setItem('Chinese HSK-4 Difficult', ["", ""]);
+    
+    localStorage.setItem('Chinese HSK-5 Easy', ["", ""]);
+    localStorage.setItem('Chinese HSK-5 Medium', ["", ""]);
+    localStorage.setItem('Chinese HSK-5 Difficult', ["", ""]);
+    
+    localStorage.setItem('Chinese HSK-6 Easy', ["", ""]);
+    localStorage.setItem('Chinese HSK-6 Medium', ["", ""]);
+    localStorage.setItem('Chinese HSK-6 Difficult', ["", ""]);
+    
+    localStorage.setItem('Japanese JLPT-N5 Easy', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N5 Medium', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N5 Difficult', ["", ""]);
+    
+    localStorage.setItem('Japanese JLPT-N4 Easy', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N4 Medium', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N4 Difficult', ["", ""]);
+    
+    localStorage.setItem('Japanese JLPT-N3 Easy', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N3 Medium', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N3 Difficult', ["", ""]);
+    
+    localStorage.setItem('Japanese JLPT-N2 Easy', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N2 Medium', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N2 Difficult', ["", ""]);
+    
+    localStorage.setItem('Japanese JLPT-N1 Easy', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N1 Medium', ["", ""]);
+    localStorage.setItem('Japanese JLPT-N1 Difficult', ["", ""]);
+    
+    localStorage.setItem('Colors Easy', ["", ""]);
+    localStorage.setItem('Colors Medium', ["", ""]);
+    localStorage.setItem('Colors Difficult', ["", ""]);
 }
 
 // settings functions
@@ -127,10 +236,10 @@ function setLevel(infoTheme, url, clicked_id) {
     levelInfo[size].innerText = `Level: ${infoLevel}`;
     displayLayer("<h3>Start!!!</h3>");
     document.querySelector("audio").play();
-    getCards(infoLevel, url, size);
+    getCards(infoTheme, infoLevel, url, size);
 }
 
-function getCards(infoLevel, url, size) {
+function getCards(infoTheme, infoLevel, url, size) {
     fetch(url)
     .then(function(response) {
         if(response.ok) {
@@ -146,7 +255,7 @@ function getCards(infoLevel, url, size) {
                     deck.push(response[tempArrPairs][cards]);       
                     }    
                 }
-            shuffleCards(deck, infoLevel, size);
+            shuffleCards(deck, infoTheme, infoLevel, size);
             })
         }
     });
@@ -159,15 +268,15 @@ function selectPairs(tempArr) {
     }
 }
 
-function shuffleCards(deck, infoLevel, size) {
+function shuffleCards(deck, infoTheme, infoLevel, size) {
     for(let i =deck.length-1 ; i>0 ;i--){
         let j = Math.floor( Math.random() * (i + 1) );
         [deck[i],deck[j]]=[deck[j],deck[i]];
     }
-    dealCards(infoLevel, size);
+    dealCards(infoTheme, infoLevel, size);
 }
 
-function dealCards(infoLevel, size) {
+function dealCards(infoTheme, infoLevel, size) {
     let images = document.querySelectorAll("img");
     let i = 0;
     images.forEach(function(image) {
@@ -177,24 +286,24 @@ function dealCards(infoLevel, size) {
         image.alt = card["alt"];
         i++
     });
-    chooseFirstCard(infoLevel, size)
+    chooseFirstCard(infoTheme, infoLevel, size)
 }
 
 // playing functions
 
-function chooseFirstCard(infoLevel, size) {
+function chooseFirstCard(infoTheme, infoLevel, size) {
     for (let card of cards) {
         card.onclick = function(){
         let firstCard = this;
         firstCard.parentElement.classList.add("flip")
         firstCard.classList.remove("cardStillHidden");
         firstCardFace = firstCard.nextElementSibling.name;
-        chooseSecondCard(infoLevel, size, firstCardFace, firstCard);
+        chooseSecondCard(infoTheme, infoLevel, size, firstCardFace, firstCard);
         }
     }
 }
 
-function chooseSecondCard(infoLevel, size, firstCardFace, firstCard) {
+function chooseSecondCard(infoTheme, infoLevel, size, firstCardFace, firstCard) {
     for (let card of cards) {
         card.onclick = function(){
         let secondCard = this;
@@ -202,12 +311,12 @@ function chooseSecondCard(infoLevel, size, firstCardFace, firstCard) {
         secondCard.classList.remove("cardStillHidden");
         secondCardFace = secondCard.nextElementSibling.name;
         document.body.classList.add("disabledClick");
-        setTimeout(checkCard, 700, infoLevel, size, firstCardFace, firstCard, secondCardFace, secondCard);
+        setTimeout(checkCard, 700, infoTheme, infoLevel, size, firstCardFace, firstCard, secondCardFace, secondCard);
         }
     }
 }
 
-function checkCard(infoLevel, size, firstCardFace, firstCard, secondCardFace, secondCard) {
+function checkCard(infoTheme, infoLevel, size, firstCardFace, firstCard, secondCardFace, secondCard) {
     if (firstCardFace !== secondCardFace) {
         firstCard.parentElement.classList.remove("flip");
         secondCard.parentElement.classList.remove("flip")
@@ -215,25 +324,25 @@ function checkCard(infoLevel, size, firstCardFace, firstCard, secondCardFace, se
         secondCard.classList.add("cardStillHidden")
     };
     nbMoves[size].innerText++;
-    endGame(infoLevel, size);
+    endGame(infoTheme, infoLevel, size);
 }
 
-function endGame(infoLevel, size) {
+function endGame(infoTheme, infoLevel, size) {
     if (infoLevel === "Easy") {
         if (document.querySelector(".cardStillHidden")) {
             document.body.classList.remove("disabledClick");
-            chooseFirstCard(infoLevel, size); 
+            chooseFirstCard(infoTheme, infoLevel, size); 
         } else {
             displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves[size].innerText} moves.<h5>`);
-           resetGame();
+            checkRecords(infoTheme, infoLevel, size);
         }
     } else if (infoLevel === "Medium") {
         if (!document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 13) {
             displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves[size].innerText} moves.</h5>`);
-            resetGame();
+            checkRecords(infoTheme, infoLevel, size)
         } else if (document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 12) {
             document.body.classList.remove("disabledClick");
-            chooseFirstCard(infoLevel, size);
+            chooseFirstCard(infoTheme, infoLevel, size);
         } else {
             displayLayer(`<h3>You lost!</h3><br><h5>${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.</h5>`);
             resetGame();
@@ -241,15 +350,26 @@ function endGame(infoLevel, size) {
     } else {
         if (!document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 10) {
             displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves[size].innerText} moves.</h5>`);
-            resetGame();
+            checkRecords(infoTheme, infoLevel, size)
         } else if (document.querySelector(".cardStillHidden") && nbMoves[size].innerText < 9) {
             document.body.classList.remove("disabledClick");
-            chooseFirstCard(infoLevel, size);
+            chooseFirstCard(infoTheme, infoLevel, size);
         } else {
             displayLayer(`<h3>You lost!</h3><br><h5>${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.</h5>`);
             resetGame();
         }
     }
+}
+
+function checkRecords(infoTheme, infoLevel, size) {
+    if (localStorage.getItem(`${infoTheme} ${infoLevel}`) === "," || localStorage.getItem(`${infoTheme} ${infoLevel}`).split(",")[1] > parseInt(nbMoves[size].innerText)) {
+        let name = prompt(`Congratulations, you set a new record\nPlease enter your name:`);
+        while (name.match(nameRegex) === null || name === null) {
+            name = prompt(`Your name must be between 3 and 20 letters long or 2 and 3 hanzi long:`);
+        }
+        localStorage.setItem(`${infoTheme} ${infoLevel}`, [name, nbMoves[size].innerText]);
+    }
+    resetGame();
 }
 
 // quit game function
@@ -268,10 +388,18 @@ function resetGame() {
         backCard.parentElement.classList.remove("flip")
     });
     dashboard[size].classList.add("d-none");
+    maxMoves[size].innerText = "";
     deck = [];
     document.body.classList.remove("disabledClick");
     game.classList.add("d-none");
     startContainer.classList.remove("d-none");
+}
+
+
+// LOCAL STORAGE
+
+if(!localStorage.getItem("informed")){
+    setStorage();
 }
 
 // GAME
