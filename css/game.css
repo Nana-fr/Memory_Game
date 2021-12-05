@@ -1,0 +1,283 @@
+
+    header {
+        display: none;
+    }
+
+    /* ##### CARDS ##### */
+  
+  .card {
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: inset 6em -1.5em 4em rgba(36, 36, 36, 0.05);
+    perspective: 400px;
+    margin: 0.5rem;
+  }
+  .innerCard {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+  }
+  .cardFace {
+    position: absolute;
+    border: 1px solid #000;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+  }
+  .back {
+    background-image: url("../img/backCard/backCard.jpg");
+    background-size: cover;
+  }
+  .cardStillHidden {
+    box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
+  }
+  .front {
+    box-shadow: -3px 0.1vw 0.3vw 0vw rgba(0, 0, 0, 0.7);
+    transform: rotateY(180deg);
+  }
+
+  .card:hover .cardStillHidden {
+    border-left: 2px solid #41362a;
+    background-image: url("../img/backCard/backCardHover.jpg");
+    background-size: cover;
+    box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.4), -6px 0.8vw 0.7vw -0.5vw rgba(0, 0, 0, 0.2), -12px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.4);
+    border-right: 1px solid #41362a;
+  }
+
+  .flip {
+    transform: translateX(-100%) rotateY(180deg);
+  }
+
+
+  .disabledClick {
+    pointer-events: none;
+  }
+
+/* portrait */
+@media screen and (orientation:portrait) {
+    body {
+        background-image: url("../img/background/bg_portrait.jpg");
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #dashboard {
+        justify-content: space-around;
+        background-image: url(../img/dashboard/dashboardPortrait.png);
+        background-size: 100% 100%;
+    }
+    #confucius {
+        display: none;
+    }
+    main {
+        flex-direction: column;
+    }
+    #game {
+        flex-direction: column;
+        margin-top: 1.5rem;
+    }
+    .card {
+        width: 25vw;
+        height: 25vw;
+    }
+    .card:hover .cardStillHidden {
+        width: 24vw;
+        height: 25vw;
+    }
+
+    @media (min-width: 576px) {
+        .card {
+          width: 20vw;
+          height: 20vw;
+          margin: 0.7rem 1.2rem;
+        }
+        .card:hover .cardStillHidden {
+          width: 19vw;
+          height: 20vw;
+          box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.4), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -16px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.4);
+        }
+        #dashboard, .btn {
+          font-size: 1.2rem;
+        }
+    }
+    @media (min-width: 768px) {
+      #dashboard {
+        padding: 1rem 0rem;
+        font-size: 1.3rem;
+      }
+      #game {
+        margin-top: 2.5rem;
+      }
+    .card {
+      width: 18vw;
+      height: 18vw;
+      perspective: 600px;
+      margin: 1.3rem 2rem;
+    }
+    .card:hover .cardStillHidden {
+      width: 17vw;
+      height: 18vw;
+      border-left: 2px solid #41362a;
+      background-image: url("../img/backCard/backCardHover2.jpg");
+      box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -18px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
+      border-right: 1px solid #41362a;
+    }
+    h3 {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 992px) {
+    #game {
+      margin-top: 3rem;
+    }
+    #dashboard, .btn {
+      font-size: 1.5rem;
+    }
+    .card {
+      margin: 2rem;
+    }
+  }
+}
+
+
+/* landscape */
+@media screen and (orientation:landscape) {
+    body {
+        background-image: url("../img/background/bg_landscape.jpg");
+        background-position: center bottom;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+    }
+
+    #dashboard {
+        flex-direction: column;
+        justify-content: center;
+        background-image: url(../img/dashboard/dashboardLandscape.png);
+        background-size: 100% 100%;
+        box-sizing: border-box;
+        margin-left: 1rem;
+        margin-right: 1.5rem;
+        width: 25vw;
+        color: #fed09ea8;
+    }
+    main {
+        flex-direction: row;
+        align-self: center;
+    }
+    #game {
+        flex-direction: row;
+        width:62vw;
+    }
+    aside .btn {
+        margin-top: 1rem;
+    }
+    #confucius {
+        margin-top: 1rem;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-family: 'Ma Shan Zheng', cursive;
+        padding-bottom: 0.5rem;
+    }
+
+    .card {
+        width: 13vw;
+        height: 13vw;
+    }
+
+    .card:hover .cardStillHidden {
+        width: 12vw;
+        height: 13vw;
+        border-left: 2px solid #41362a;
+        background-image: url("../img/backCard/backCardHover3.jpg");
+        box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -19px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
+        border-right: 1px solid #41362a; 
+    }
+
+    @media (min-width: 576px) {
+        .card {
+            margin: 0.7rem;
+        }
+        #dashboard {
+            font-size: 1.1rem;
+        }
+        #confucius {
+            font-size: 1.5rem;
+        }
+    }
+    @media (min-width: 768px) {
+        #dashboard {
+            font-size: 1.3rem;
+            margin-right: 2rem;
+        }
+        aside .btn {
+            font-size: 1.1rem;
+        }
+        .card {
+            width: 12vw;
+            height: 12vw;
+        }
+        .card:hover .cardStillHidden {
+            width: 11vw;
+            height: 12vw;
+        }
+    }
+    @media (min-width: 992px) {
+        header {
+            display: block;
+        }
+        body {
+          display: block;
+        }
+         .card {
+            margin: 1.4rem;
+          }
+          h1 {
+            font-size: 6rem;
+          }
+          #dashboard {
+            margin-right: 3rem;
+          }
+          #confucius {
+            margin-top: 1.5rem;
+            font-size: 2.5rem;
+            padding-bottom: 0.5rem;
+          }
+          aside .btn {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (min-width: 1200px) {
+      main {
+        margin-top: 4.5rem;
+      }
+      .card {
+        width: 9vw;
+        height: 9vw;
+      }
+      .card:hover .cardStillHidden {
+        width: 8.5vw;
+        height: 9vw;
+        border-left: 2px solid #41362a;
+        background-image: url("../img/backCard/backCardHover2.jpg");
+        box-shadow: -1px 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3), -7px 0.8vw 0.9vw -0.5vw rgba(0, 0, 0, 0.2), -20px 1.8vw 1.5vw -1.2vw rgba(0, 0, 0, 0.5);
+        border-right: 1px solid #41362a;
+      }
+      #dashboard {
+        margin-left: 5rem;
+        margin-right: 3rem;
+        width: 20vw;
+      }
+      #confucius {
+        padding-bottom: 0rem;
+      }
+    }
+} 
