@@ -1,0 +1,62 @@
+{
+    "Chinese HSK-1": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Chinese HSK-2": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Chinese HSK-3": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Chinese HSK-4": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Chinese HSK-5": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Chinese HSK-6": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Japanese JLPT-N5": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Japanese JLPT-N4": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Japanese JLPT-N3": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Japanese JLPT-N2": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Japanese JLPT-N1": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    },
+    "Colors": {
+        "Easy": ["", ""],
+        "Medium": ["", ""],
+        "Difficult": ["", ""]
+    }
+}

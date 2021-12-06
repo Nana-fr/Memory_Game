@@ -41,9 +41,11 @@ function closeLayer() {
     document.getElementById("layer").classList.add("d-none");
 }
 
+
+{/* <tr><td>${theme}</td><td>${level}</td><td>${localStorage.getItem(`${theme} ${level}`).split(",")[0]}</td><td>${localStorage.getItem(`${theme} ${level}`).split(",")[1]}</td></tr> */}
 function displayRecords() {
     document.getElementById("layer").classList.remove("d-none");
-    p.classList.add("overflow");
+    // p.classList.add("overflow");
     let table = document.getElementById("table");
     table.innerHTML = `<tr><td>Chinese HSK1</td><td>Easy</td><td>${localStorage.getItem("Chinese HSK-1 Easy").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-1 Easy").split(",")[1]}</td></tr>
                       <tr><td></td><td>Medium</td><td>${localStorage.getItem("Chinese HSK-1 Medium").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-1 Medium").split(",")[1]}</td></tr>
@@ -96,56 +98,20 @@ function displayRecords() {
 }
 
 // initialization local storage
-
 function setStorage() {
-    localStorage.setItem("informed", true);
-    localStorage.setItem('Chinese HSK-1 Easy', ["", ""]);
-    localStorage.setItem('Chinese HSK-1 Medium', ["", ""]);
-    localStorage.setItem('Chinese HSK-1 Difficult', ["", ""]);
-    
-    localStorage.setItem('Chinese HSK-2 Easy', ["", ""]);
-    localStorage.setItem('Chinese HSK-2 Medium', ["", ""]);
-    localStorage.setItem('Chinese HSK-2 Difficult', ["", ""]);
-    
-    localStorage.setItem('Chinese HSK-3 Easy', ["", ""]);
-    localStorage.setItem('Chinese HSK-3 Medium', ["", ""]);
-    localStorage.setItem('Chinese HSK-3 Difficult', ["", ""]);
-    
-    localStorage.setItem('Chinese HSK-4 Easy', ["", ""]);
-    localStorage.setItem('Chinese HSK-4 Medium', ["", ""]);
-    localStorage.setItem('Chinese HSK-4 Difficult', ["", ""]);
-    
-    localStorage.setItem('Chinese HSK-5 Easy', ["", ""]);
-    localStorage.setItem('Chinese HSK-5 Medium', ["", ""]);
-    localStorage.setItem('Chinese HSK-5 Difficult', ["", ""]);
-    
-    localStorage.setItem('Chinese HSK-6 Easy', ["", ""]);
-    localStorage.setItem('Chinese HSK-6 Medium', ["", ""]);
-    localStorage.setItem('Chinese HSK-6 Difficult', ["", ""]);
-    
-    localStorage.setItem('Japanese JLPT-N5 Easy', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N5 Medium', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N5 Difficult', ["", ""]);
-    
-    localStorage.setItem('Japanese JLPT-N4 Easy', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N4 Medium', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N4 Difficult', ["", ""]);
-    
-    localStorage.setItem('Japanese JLPT-N3 Easy', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N3 Medium', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N3 Difficult', ["", ""]);
-    
-    localStorage.setItem('Japanese JLPT-N2 Easy', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N2 Medium', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N2 Difficult', ["", ""]);
-    
-    localStorage.setItem('Japanese JLPT-N1 Easy', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N1 Medium', ["", ""]);
-    localStorage.setItem('Japanese JLPT-N1 Difficult', ["", ""]);
-    
-    localStorage.setItem('Colors Easy', ["", ""]);
-    localStorage.setItem('Colors Medium', ["", ""]);
-    localStorage.setItem('Colors Difficult', ["", ""]);
+    fetch('data/records.json')
+    .then(function(response) {
+        if(response.ok) {
+            response.json().then(function(response){
+                for (let theme in response) {
+                    for (let level in response[theme]){
+                        localStorage.setItem(`${theme} ${level}`, response[theme][level]);
+                    }
+                }
+                localStorage.setItem("informed", true);
+            })
+        }
+    });
 }
 
 // settings functions
