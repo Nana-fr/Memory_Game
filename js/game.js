@@ -23,12 +23,15 @@ let deck = [];
 
 function displayLayer(text) {
     document.getElementById("layer").classList.remove("d-none");
-    p.innerHTML = text;
+    p.innerHTML = text;  
 }
 
 function closeLayer() {
-    p.classList.remove("overflow");
-    document.getElementById("layer").classList.add("d-none");
+    if (!document.querySelector(".cardStillHidden")) {
+        resetGame();
+    } else {
+        document.getElementById("layer").classList.add("d-none"); 
+    }
 }
 
 function setLevel(infoTheme, infoLevel, url) {
@@ -40,8 +43,6 @@ function setLevel(infoTheme, infoLevel, url) {
         maxMoves.innerText = "/12";
     }
     levelInfo.innerText = `Level: ${infoLevel}`;
-    displayLayer("<h3>Start!!!</h3>");
-    document.querySelector("audio").play();
     getCards(infoTheme, infoLevel, url);
 }
 
@@ -92,6 +93,8 @@ function dealCards(infoTheme, infoLevel) {
         image.alt = card["alt"];
         i++
     });
+    displayLayer("<h3>Start!!!</h3>");
+    document.querySelector("audio").play();
     chooseFirstCard(infoTheme, infoLevel)
 }
 
@@ -134,9 +137,10 @@ function checkCard(infoTheme, infoLevel, firstCardFace, firstCard, secondCardFac
 }
 
 function endGame(infoTheme, infoLevel) {
+    document.body.classList.remove("disabledClick");
     if (infoLevel === "Easy") {
         if (document.querySelector(".cardStillHidden")) {
-            document.body.classList.remove("disabledClick");
+            
             chooseFirstCard(infoTheme, infoLevel); 
         } else {
             displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves.innerText} moves.<h5>`);
@@ -147,22 +151,18 @@ function endGame(infoTheme, infoLevel) {
             displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves.innerText} moves.</h5>`);
             checkRecords(infoTheme, infoLevel)
         } else if (document.querySelector(".cardStillHidden") && nbMoves.innerText < 12) {
-            document.body.classList.remove("disabledClick");
             chooseFirstCard(infoTheme, infoLevel);
         } else {
             displayLayer(`<h3>You lost!</h3><br><h5>${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.</h5>`);
-            resetGame();
         }
     } else {
         if (!document.querySelector(".cardStillHidden") && nbMoves.innerText < 10) {
             displayLayer(`<h3>Congratulations!!!</h3><br><h5>You win in ${nbMoves.innerText} moves.</h5>`);
             checkRecords(infoTheme, infoLevel)
         } else if (document.querySelector(".cardStillHidden") && nbMoves.innerText < 9) {
-            document.body.classList.remove("disabledClick");
             chooseFirstCard(infoTheme, infoLevel);
         } else {
             displayLayer(`<h3>You lost!</h3><br><h5>${document.querySelectorAll(".cardStillHidden").length/2} pairs haven't been found.</h5>`);
-            resetGame();
         }
     }
 }
@@ -175,7 +175,6 @@ function checkRecords(infoTheme, infoLevel) {
         }
         localStorage.setItem(`${infoTheme} ${infoLevel}`, [name, nbMoves.innerText]);
     }
-    resetGame();
 }
 
 // quit game function

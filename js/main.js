@@ -4,16 +4,13 @@ let startContainer = document.getElementById("startContainer");
 let launchGame = document.getElementById("launchGame");
 let records = document.getElementById("records");
 
-
 // layer
 let p = document.getElementById("message");
 
 // settings variables
 let theme = document.getElementById("theme");
-let Colors = document.getElementById("Colors");
 let subtheme = document.getElementsByClassName("subtheme");
 let level = document.getElementById("level");
-
 
 // FUNCTIONS
 
@@ -32,12 +29,8 @@ function displayRules() {
     httpRequest.send();
 };
 
-function displayLayer(text) {
-    document.getElementById("layer").classList.remove("d-none");
-    p.innerHTML = text;
-}
-
 function closeLayer() {
+    p.classList.remove("overflow");
     document.getElementById("layer").classList.add("d-none");
 }
 
@@ -45,7 +38,7 @@ function closeLayer() {
 {/* <tr><td>${theme}</td><td>${level}</td><td>${localStorage.getItem(`${theme} ${level}`).split(",")[0]}</td><td>${localStorage.getItem(`${theme} ${level}`).split(",")[1]}</td></tr> */}
 function displayRecords() {
     document.getElementById("layer").classList.remove("d-none");
-    // p.classList.add("overflow");
+    p.classList.add("overflow");
     let table = document.getElementById("table");
     table.innerHTML = `<tr><td>Chinese HSK1</td><td>Easy</td><td>${localStorage.getItem("Chinese HSK-1 Easy").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-1 Easy").split(",")[1]}</td></tr>
                       <tr><td></td><td>Medium</td><td>${localStorage.getItem("Chinese HSK-1 Medium").split(",")[0]}</td><td>${localStorage.getItem("Chinese HSK-1 Medium").split(",")[1]}</td></tr>
@@ -89,11 +82,7 @@ function displayRecords() {
                       
                       <tr><td>Japanese JLPT-N1</td><td>Easy</td><td>${localStorage.getItem("Japanese JLPT-N1 Easy").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Easy").split(",")[1]}</td></tr>
                       <tr><td></td><td>Medium</td><td>${localStorage.getItem("Japanese JLPT-N1 Medium").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Medium").split(",")[1]}</td></tr>
-                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Japanese JLPT-N1 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Difficult").split(",")[1]}</td></tr>
-                      
-                      <tr><td>Colors</td><td>Easy</td><td>${localStorage.getItem("Colors Easy").split(",")[0]}</td><td>${localStorage.getItem("Colors Easy").split(",")[1]}</td></tr>
-                      <tr><td></td><td>Medium</td><td>${localStorage.getItem("Colors Medium").split(",")[0]}</td><td>${localStorage.getItem("Colors Medium").split(",")[1]}</td></tr>
-                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Colors Difficult").split(",")[0]}</td><td>${localStorage.getItem("Colors Difficult").split(",")[1]}</td></tr>`;
+                      <tr><td></td><td>Difficult</td><td>${localStorage.getItem("Japanese JLPT-N1 Difficult").split(",")[0]}</td><td>${localStorage.getItem("Japanese JLPT-N2 Difficult").split(",")[1]}</td></tr>`;
     p.innerHTML = records.innerHTML;
 }
 
@@ -119,11 +108,7 @@ function setStorage() {
 function setTheme(clicked_id) {
     theme.classList.add("d-none");
     let infoTheme = clicked_id;
-    if (clicked_id === "Colors") {
-        level.classList.remove("d-none");
-        let url = 'data/colors.json';
-        selectLevel(infoTheme, url)
-    } else if (clicked_id === "Chinese") {
+    if (clicked_id === "Chinese") {
         subtheme[0].classList.remove("d-none");
         let buttons = subtheme[0].children;
         for (let button of buttons[0].children) {

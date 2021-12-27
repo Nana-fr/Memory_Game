@@ -53,10 +53,5 @@
         "Easy": ["", ""],
         "Medium": ["", ""],
         "Difficult": ["", ""]
-    },
-    "Colors": {
-        "Easy": ["", ""],
-        "Medium": ["", ""],
-        "Difficult": ["", ""]
     }
 }
