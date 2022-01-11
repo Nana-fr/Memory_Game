@@ -10,5 +10,4 @@
 <ul>
 <li>Chinese: Find the pinyin corresponding to the character</li>
 <li>Japonese: Find the kunyomi pronunciation of the kanji</li>
-<li>Colors: Find the color corresponding to the text</li>
 </ul>
